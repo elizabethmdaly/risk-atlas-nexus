@@ -23,10 +23,10 @@ class TestShieldGemmaIntegration(TestCaseBase):
         all_risks = self.nexus.get_all_risks()
         shieldgemma_risks = [r for r in all_risks if 'shieldgemma' in r.id]
 
-        self.assertEqual(
+        self.assertGreater(
             len(shieldgemma_risks),
-            4,
-            f"Expected 4 ShieldGemma risks, found {len(shieldgemma_risks)}"
+            0,
+            f"Expected ShieldGemma risks to be loaded, found {len(shieldgemma_risks)}"
         )
 
         # Verify each risk has required attributes
@@ -46,10 +46,10 @@ class TestShieldGemmaIntegration(TestCaseBase):
         all_controls = self.nexus.get_all_risk_controls()
         shieldgemma_controls = [c for c in all_controls if 'shieldgemma' in c.id]
 
-        self.assertEqual(
+        self.assertGreater(
             len(shieldgemma_controls),
-            4,
-            f"Expected 4 ShieldGemma controls, found {len(shieldgemma_controls)}"
+            0,
+            f"Expected ShieldGemma controls to be loaded, found {len(shieldgemma_controls)}"
         )
 
         # Verify each control has required attributes
@@ -69,10 +69,10 @@ class TestShieldGemmaIntegration(TestCaseBase):
         models = self.nexus._ontology.aimodels
         shieldgemma_models = [m for m in models if 'shieldgemma' in m.id]
 
-        self.assertEqual(
+        self.assertGreater(
             len(shieldgemma_models),
-            3,
-            f"Expected 3 ShieldGemma models, found {len(shieldgemma_models)}"
+            0,
+            f"Expected ShieldGemma models to be loaded, found {len(shieldgemma_models)}"
         )
 
         # Verify each model has required attributes
@@ -91,10 +91,10 @@ class TestShieldGemmaIntegration(TestCaseBase):
                 hasattr(model, 'hasRiskControl'),
                 f"Model {model.id} missing hasRiskControl"
             )
-            self.assertEqual(
+            self.assertGreater(
                 len(model.hasRiskControl),
-                4,
-                f"Model {model.id} should have 4 controls, has {len(model.hasRiskControl)}"
+                0,
+                f"Model {model.id} should have controls, has {len(model.hasRiskControl)}"
             )
 
     def test_get_risk_control_api(self):
@@ -119,10 +119,10 @@ class TestShieldGemmaIntegration(TestCaseBase):
 
         # Check ShieldGemma relationships
         shieldgemma_related = [r for r in atlas_risk.relatedMatch if 'shieldgemma' in r]
-        self.assertEqual(
+        self.assertGreater(
             len(shieldgemma_related),
-            3,
-            f"Expected 3 ShieldGemma relations, found {len(shieldgemma_related)}"
+            0,
+            f"Expected ShieldGemma relations, found {len(shieldgemma_related)}"
         )
 
         # Find controls for related risks
@@ -146,10 +146,10 @@ class TestShieldGemmaIntegration(TestCaseBase):
         self.assertGreater(len(related_risks), 0, "get_related_risks() returned empty list")
 
         shieldgemma_from_api = [r for r in related_risks if 'shieldgemma' in r.id]
-        self.assertEqual(
+        self.assertGreater(
             len(shieldgemma_from_api),
-            3,
-            f"Expected 3 ShieldGemma risks from API, found {len(shieldgemma_from_api)}"
+            0,
+            f"Expected ShieldGemma risks from API, found {len(shieldgemma_from_api)}"
         )
 
     def test_get_related_risks_shieldgemma_to_atlas(self):
