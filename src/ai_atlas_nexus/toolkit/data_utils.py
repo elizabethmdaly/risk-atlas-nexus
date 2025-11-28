@@ -42,31 +42,36 @@ def load_yamls_to_container(base_dir):
         except Exception as e:
             logger.info(f"YAML ignored: {yaml_file}. Failed to load. {e}")
 
-    # TODO: generalise this to cover all ontology classes
+    # Helper function to combine entries with the same ID
+    def combine_entities(entities):
+        """Combine entities with the same ID by merging their attributes."""
+        combined = {}
+        for entity in entities:
+            entity_id = entity["id"]
 
-    # combine any risk entries which share the same id, for example a risk, and a secondary entry for a mapping
-    combine_risks = {}
+            if entity_id not in combined:
+                combined[entity_id] = {"id": entity_id}
 
-    for risk in yml_items_result["risks"]:
-        risk_id = risk["id"]
-
-        if risk_id not in combine_risks:
-            combine_risks[risk_id] = {"id": risk_id}
-
-        for key, value in risk.items():
-            if key != "id":
-                if key not in combine_risks[risk_id]:
-                    combine_risks[risk_id][key] = value
-                else:
-                    if combine_risks[risk_id][key] is not None:
-                        combine_risks[risk_id][key] = [
-                            *combine_risks[risk_id][key],
-                            *value,
-                        ]
+            for key, value in entity.items():
+                if key != "id":
+                    if key not in combined[entity_id]:
+                        combined[entity_id][key] = value
                     else:
-                        combine_risks[risk_id][key] = value
+                        if combined[entity_id][key] is not None:
+                            combined[entity_id][key] = [
+                                *combined[entity_id][key],
+                                *value,
+                            ]
+                        else:
+                            combined[entity_id][key] = value
 
-    yml_items_result["risks"] = list(combine_risks.values())
+        return list(combined.values())
+
+    # Combine entries for entity types that may have mappings split across multiple files
+    entity_types_to_combine = ["risks", "capabilities", "aitasks", "adapters"]
+    for entity_type in entity_types_to_combine:
+        if entity_type in yml_items_result:
+            yml_items_result[entity_type] = combine_entities(yml_items_result[entity_type])
 
     ontology = yaml_loader.load_any(
         source=yml_items_result,

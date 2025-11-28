@@ -13,6 +13,7 @@ imports:
   - ai_system
   - ai_eval
   - ai_intrinsic
+  - ai_capability
   - ai_csiro_rai
 prefixes:
   linkml: https://w3id.org/linkml/
@@ -208,5 +209,29 @@ classes:
         description: A list of Principles
         multivalued: true
         range: Principle
+        inlined: true
+        inlined_as_list: true
+      capabilitytaxonomies:
+        description: A list of Capability Taxonomies
+        multivalued: true
+        range: CapabilityTaxonomy
+        inlined: true
+        inlined_as_list: true
+      capabilitydomains:
+        description: A list of Capability Domains
+        multivalued: true
+        range: CapabilityDomain
+        inlined: true
+        inlined_as_list: true
+      capabilitygroups:
+        description: A list of Capability Groups
+        multivalued: true
+        range: CapabilityGroup
+        inlined: true
+        inlined_as_list: true
+      capabilities:
+        description: A list of AI Capabilities
+        multivalued: true
+        range: Capability
         inlined: true
         inlined_as_list: true

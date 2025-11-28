@@ -1,0 +1,26 @@
+#curie_map:
+#  ibmcap: https://ibm.github.io/ai-atlas-nexus/capabilities/
+#  ibmadapter: https://huggingface.co/ibm-granite/
+#  semapv: https://w3id.org/semapv/vocab/
+#  nexus: https://ibm.github.io/ai-atlas-nexus/ontology/
+#mapping_set_id: https://github.com/IBM/ai-atlas-nexus/tree/main/src/data/mappings/ibm_cap2intrinsic.tsv
+#mapping_set_description: Mapping from IBM AI Capabilities to Intrinsics/Adapters
+#license: https://www.apache.org/licenses/LICENSE-2.0.html
+#mapping_date: "2025-11-26"
+subject_id	subject_label	predicate_id	object_id	object_label	mapping_justification	author_id	confidence	comment
+ibmcap:ibm-cap-contextual-understanding	Contextual Understanding	nexus:implementedByAdapter	ibmadapter:ibm-factuality-adapter-granite-3.3-8b-instruct-lora-query-rewrite	Query Rewrite	semapv:ManualMappingCuration	ibm-research	0.95	Query rewrite requires understanding conversational context
+ibmcap:ibm-cap-text-generation	Text Generation	nexus:implementedByAdapter	ibmadapter:ibm-factuality-adapter-granite-3.3-8b-instruct-lora-query-rewrite	Query Rewrite	semapv:ManualMappingCuration	ibm-research	0.90	Generating rewritten queries
+ibmcap:ibm-cap-reading-comprehension	Reading Comprehension	nexus:implementedByAdapter	ibmadapter:ibm-factuality-adapter-granite-3.3-8b-instruct-lora-query-rewrite	Query Rewrite	semapv:ManualMappingCuration	ibm-research	0.85	Understanding user intent in multi-turn conversation
+ibmcap:ibm-cap-contextual-understanding	Contextual Understanding	nexus:implementedByAdapter	ibmadapter:ibm-factuality-adapter-granite-3.3-8b-instruct-lora-query-expansion	Query Expansion	semapv:ManualMappingCuration	ibm-research	0.90	Understanding semantic context for expansion
+ibmcap:ibm-cap-text-generation	Text Generation	nexus:implementedByAdapter	ibmadapter:ibm-factuality-adapter-granite-3.3-8b-instruct-lora-query-expansion	Query Expansion	semapv:ManualMappingCuration	ibm-research	0.90	Generating semantically diverse queries
+ibmcap:ibm-cap-causal-reasoning	Causal Reasoning	nexus:implementedByAdapter	ibmadapter:ibm-factuality-adapter-granite-3.3-8b-instruct-lora-query-expansion	Query Expansion	semapv:ManualMappingCuration	ibm-research	0.75	Reasoning about different query formulations
+ibmcap:ibm-cap-reading-comprehension	Reading Comprehension	nexus:implementedByAdapter	ibmadapter:ibm-factuality-adapter-granite-3.3-8b-instruct-lora-context-relevance	Context Relevance	semapv:ManualMappingCuration	ibm-research	0.95	Understanding document content
+ibmcap:ibm-cap-contextual-understanding	Contextual Understanding	nexus:implementedByAdapter	ibmadapter:ibm-factuality-adapter-granite-3.3-8b-instruct-lora-context-relevance	Context Relevance	semapv:ManualMappingCuration	ibm-research	0.95	Understanding query context and relevance
+ibmcap:ibm-cap-logical-reasoning	Logical Reasoning	nexus:implementedByAdapter	ibmadapter:ibm-factuality-adapter-granite-3.3-8b-instruct-lora-context-relevance	Context Relevance	semapv:ManualMappingCuration	ibm-research	0.85	Reasoning about document-query relevance
+ibmcap:ibm-cap-reading-comprehension	Reading Comprehension	nexus:implementedByAdapter	ibmadapter:ibm-factuality-adapter-granite-3.3-8b-instruct-lora-answerability-determination	Answerability Determination	semapv:ManualMappingCuration	ibm-research	0.95	Understanding documents and questions
+ibmcap:ibm-cap-logical-reasoning	Logical Reasoning	nexus:implementedByAdapter	ibmadapter:ibm-factuality-adapter-granite-3.3-8b-instruct-lora-answerability-determination	Answerability Determination	semapv:ManualMappingCuration	ibm-research	0.90	Reasoning about whether question is answerable
+ibmcap:ibm-cap-factual-accuracy	Factual Accuracy	nexus:implementedByAdapter	ibmadapter:ibm-factuality-adapter-granite-3.3-8b-instruct-lora-answerability-determination	Answerability Determination	semapv:ManualMappingCuration	ibm-research	0.85	Avoiding hallucination by determining when not to answer
+ibmcap:ibm-cap-contextual-understanding	Contextual Understanding	nexus:implementedByAdapter	ibmadapter:ibm-factuality-adapter-granite-3.3-8b-instruct-lora-answerability-determination	Answerability Determination	semapv:ManualMappingCuration	ibm-research	0.90	Understanding multi-turn conversation context
+ibmcap:ibm-cap-reading-comprehension	Reading Comprehension	nexus:implementedByAdapter	ibmadapter:ibm-factuality-adapter-granite-3.3-instruct-lora-passage-reranking	Passage Reranking	semapv:ManualMappingCuration	ibm-research	0.90	Understanding passage content
+ibmcap:ibm-cap-logical-reasoning	Logical Reasoning	nexus:implementedByAdapter	ibmadapter:ibm-factuality-adapter-granite-3.3-instruct-lora-passage-reranking	Passage Reranking	semapv:ManualMappingCuration	ibm-research	0.85	Reasoning about relative relevance of passages
+ibmcap:ibm-cap-contextual-understanding	Contextual Understanding	nexus:implementedByAdapter	ibmadapter:ibm-factuality-adapter-granite-3.3-instruct-lora-passage-reranking	Passage Reranking	semapv:ManualMappingCuration	ibm-research	0.85	Understanding query context for ranking

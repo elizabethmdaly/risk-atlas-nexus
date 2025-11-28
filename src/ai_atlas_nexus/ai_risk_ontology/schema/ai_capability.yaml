@@ -1,0 +1,211 @@
+id: https://ibm.github.io/ai-atlas-nexus/ontology/ai_capability
+name: ai_capability
+description:
+  Vocabulary describing AI capabilities as used by IBM AI Capabilities Framework
+default_curi_maps:
+  - semweb_context
+imports:
+  - linkml:types
+  - common
+  - ai_system
+prefixes:
+  linkml: https://w3id.org/linkml/
+  airo: https://w3id.org/airo#
+  nexus: https://ibm.github.io/ai-atlas-nexus/ontology/
+  skos: http://www.w3.org/2004/02/skos/core#
+default_range: string
+default_prefix: nexus
+
+classes:
+
+  CapabilityTaxonomy:
+    is_a: Entity
+    description: A taxonomy of AI capabilities describing the abilities of AI systems
+    slots:
+      - version
+      - hasDocumentation
+      - hasLicense
+
+  CapabilityDomain:
+    is_a: Entity
+    description: A high-level domain of AI capabilities (e.g., Language, Reasoning, Knowledge)
+    mixins:
+      - CapabilityConcept
+    slot_usage:
+      hasPart:
+        description: A relationship where a capability domain has capability groups
+        range: CapabilityGroup
+    slots:
+      - isDefinedByTaxonomy
+      - hasPart
+      - belongsToDomain
+
+  CapabilityGroup:
+    is_a: Entity
+    description: A group of AI capabilities that are part of a capability taxonomy, organized under a domain
+    mixins:
+      - CapabilityConcept
+    slot_usage:
+      hasPart:
+        description: A relationship where a capability group has capabilities
+        range: Capability
+      belongsToDomain:
+        description: A relationship where a capability group belongs to a capability domain
+        range: CapabilityDomain
+    slots:
+      - isDefinedByTaxonomy
+      - belongsToDomain
+      - hasPart
+      - closeMatch
+      - exactMatch
+      - broadMatch
+      - narrowMatch
+      - relatedMatch
+
+  Capability:
+    is_a: Entity
+    mixins:
+      - CapabilityConcept
+    description: A specific AI capability or ability, such as reading comprehension, logical reasoning, or code generation
+    class_uri: airo:Capability
+    attributes:
+      tag:
+        description: A short version of the name
+    slot_usage:
+      isPartOf:
+        description: A relationship where a capability is part of a capability group
+        range: CapabilityGroup
+    slots:
+      - isDefinedByTaxonomy
+      - isPartOf
+      - closeMatch
+      - exactMatch
+      - broadMatch
+      - narrowMatch
+      - relatedMatch
+      - requiredByTask
+      - evaluatedByBenchmark
+      - implementedByIntrinsic
+      - implementedByAdapter
+
+  CapabilityConcept:
+    is_a: Entity
+    description: An umbrella term for referring to capability domains, groups, and individual capabilities
+    class_uri: nexus:CapabilityConcept
+    slots:
+
+slots:
+  # Capability taxonomy relationships
+  isDefinedByTaxonomy:
+    description: A relationship indicating that a capability concept is defined by a specific taxonomy
+    range: CapabilityTaxonomy
+    slot_uri: schema:isPartOf
+
+  belongsToDomain:
+    description: A relationship where a capability group belongs to a capability domain
+    range: CapabilityDomain
+    slot_uri: schema:isPartOf
+
+  # Capability cross-references (SKOS-based)
+  exactMatch:
+    description: Indicates that two capability concepts are semantically equivalent
+    range: Capability
+    slot_uri: skos:exactMatch
+    multivalued: true
+    inlined: false
+
+  closeMatch:
+    description: Indicates that two capability concepts are sufficiently similar for some purposes
+    range: Capability
+    slot_uri: skos:closeMatch
+    multivalued: true
+    inlined: false
+
+  broadMatch:
+    description: Indicates that one capability concept is broader than another
+    range: Capability
+    slot_uri: skos:broadMatch
+    multivalued: true
+    inlined: false
+
+  narrowMatch:
+    description: Indicates that one capability concept is narrower than another
+    range: Capability
+    slot_uri: skos:narrowMatch
+    multivalued: true
+    inlined: false
+
+  relatedMatch:
+    description: Indicates that two capability concepts are related in some way
+    range: Capability
+    slot_uri: skos:relatedMatch
+    multivalued: true
+    inlined: false
+
+  # Task-capability relationships
+  requiredByTask:
+    description: Indicates that this capability is required to perform a specific AI task
+    range: AiTask
+    multivalued: true
+    inlined: false
+    inverse: requiresCapability
+
+  requiresCapability:
+    description: Indicates that this AI task requires a specific capability
+    domain: AiTask
+    range: Capability
+    multivalued: true
+    inlined: false
+    inverse: requiredByTask
+
+  # Benchmark-capability relationships
+  evaluatedByBenchmark:
+    description: Indicates that this capability is evaluated by a specific benchmark
+    range: BenchmarkMetadataCard
+    multivalued: true
+    inlined: false
+    inverse: evaluatesCapability
+
+  evaluatesCapability:
+    description: Indicates that this benchmark evaluates a specific capability
+    domain: BenchmarkMetadataCard
+    range: Capability
+    multivalued: true
+    inlined: false
+    inverse: evaluatedByBenchmark
+
+  # Intrinsic-capability relationships
+  implementedByIntrinsic:
+    description: Indicates that this capability is implemented by a specific LLM intrinsic
+    range: LLMIntrinsic
+    multivalued: true
+    inlined: false
+    inverse: implementsCapability
+
+  implementsCapability:
+    description: Indicates that this intrinsic implements a specific capability
+    domain: LLMIntrinsic
+    range: Capability
+    multivalued: true
+    inlined: false
+    inverse: implementedByIntrinsic
+
+  # Adapter-capability relationships
+  implementedByAdapter:
+    description: Indicates that this capability is implemented by a specific adapter
+    range: Adapter
+    multivalued: true
+    inlined: false
+    inverse: implementsCapability_adapter
+
+  implementsCapability_adapter:
+    description: Indicates that this adapter implements a specific capability
+    domain: Adapter
+    range: Capability
+    multivalued: true
+    inlined: false
+    inverse: implementedByAdapter
+
+  tag:
+    description: A short identifier for the capability
+    range: string

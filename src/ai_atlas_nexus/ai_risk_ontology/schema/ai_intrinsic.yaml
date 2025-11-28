@@ -38,6 +38,7 @@ classes:
     - hasLicense
     - hasRelatedRisk
     - adaptsModel
+    - implementsCapability_adapter
     # Can it be used on any model?
 
   LLMIntrinsic:

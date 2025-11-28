@@ -101,6 +101,7 @@ classes:
     class_uri: airo:AiCapability
     description: A task, such as summarization and classification, performed by an AI.
     slots:
+      - requiresCapability
 
   AiLifecyclePhase:
     is_a: Entity

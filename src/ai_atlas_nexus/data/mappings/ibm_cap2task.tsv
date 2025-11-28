@@ -1,0 +1,36 @@
+#curie_map:
+#  ibmcap: https://ibm.github.io/ai-atlas-nexus/capabilities/
+#  aitask: https://huggingface.co/tasks/
+#  semapv: https://w3id.org/semapv/vocab/
+#  nexus: https://ibm.github.io/ai-atlas-nexus/ontology/
+#mapping_set_id: https://github.com/IBM/ai-atlas-nexus/tree/main/src/data/mappings/ibm_cap2task.tsv
+#mapping_set_description: Mapping from IBM AI Capabilities to AI Tasks
+#license: https://www.apache.org/licenses/LICENSE-2.0.html
+#mapping_date: "2025-11-26"
+subject_id	subject_label	predicate_id	object_id	object_label	mapping_justification	author_id	confidence	comment
+ibmcap:ibm-cap-reading-comprehension	Reading Comprehension	nexus:requiredByTask	aitask:question-answering	Question Answering	semapv:ManualMappingCuration	ibm-research	0.95	Essential for understanding questions and context
+ibmcap:ibm-cap-contextual-understanding	Contextual Understanding	nexus:requiredByTask	aitask:question-answering	Question Answering	semapv:ManualMappingCuration	ibm-research	0.95	Critical for multi-turn QA and context-dependent questions
+ibmcap:ibm-cap-logical-reasoning	Logical Reasoning	nexus:requiredByTask	aitask:question-answering	Question Answering	semapv:ManualMappingCuration	ibm-research	0.85	Required for inference-based and reasoning questions
+ibmcap:ibm-cap-domain-knowledge	Domain Knowledge	nexus:requiredByTask	aitask:question-answering	Question Answering	semapv:ManualMappingCuration	ibm-research	0.80	Needed for domain-specific questions
+ibmcap:ibm-cap-factual-accuracy	Factual Accuracy	nexus:requiredByTask	aitask:question-answering	Question Answering	semapv:ManualMappingCuration	ibm-research	0.90	Critical to avoid hallucinated answers
+ibmcap:ibm-cap-reading-comprehension	Reading Comprehension	nexus:requiredByTask	aitask:summarization	Summarization	semapv:ManualMappingCuration	ibm-research	0.95	Must understand source text to summarize
+ibmcap:ibm-cap-text-generation	Text Generation	nexus:requiredByTask	aitask:summarization	Summarization	semapv:ManualMappingCuration	ibm-research	0.95	Must generate coherent summary text
+ibmcap:ibm-cap-contextual-understanding	Contextual Understanding	nexus:requiredByTask	aitask:summarization	Summarization	semapv:ManualMappingCuration	ibm-research	0.90	Understanding overall context and key points
+ibmcap:ibm-cap-reading-comprehension	Reading Comprehension	nexus:requiredByTask	aitask:text-classification	Text Classification	semapv:ManualMappingCuration	ibm-research	0.90	Must understand text to classify it
+ibmcap:ibm-cap-contextual-understanding	Contextual Understanding	nexus:requiredByTask	aitask:text-classification	Text Classification	semapv:ManualMappingCuration	ibm-research	0.85	Context helps determine correct classification
+ibmcap:ibm-cap-text-generation	Text Generation	nexus:requiredByTask	aitask:text-generation	Text Generation	semapv:ManualMappingCuration	ibm-research	0.95	Core capability for the task
+ibmcap:ibm-cap-contextual-understanding	Contextual Understanding	nexus:requiredByTask	aitask:text-generation	Text Generation	semapv:ManualMappingCuration	ibm-research	0.90	Maintaining context in generated text
+ibmcap:ibm-cap-common-sense-reasoning	Common Sense Reasoning	nexus:requiredByTask	aitask:text-generation	Text Generation	semapv:ManualMappingCuration	ibm-research	0.80	Generating plausible and realistic text
+ibmcap:ibm-cap-reading-comprehension	Reading Comprehension	nexus:requiredByTask	aitask:translation	Translation	semapv:ManualMappingCuration	ibm-research	0.95	Must understand source language text
+ibmcap:ibm-cap-text-generation	Text Generation	nexus:requiredByTask	aitask:translation	Translation	semapv:ManualMappingCuration	ibm-research	0.95	Must generate fluent target language text
+ibmcap:ibm-cap-contextual-understanding	Contextual Understanding	nexus:requiredByTask	aitask:translation	Translation	semapv:ManualMappingCuration	ibm-research	0.90	Preserving context and meaning across languages
+ibmcap:ibm-cap-code-generation	Code Generation	nexus:requiredByTask	aitask:code-generation	Code Generation	semapv:ManualMappingCuration	ibm-research	0.95	Core capability for the task
+ibmcap:ibm-cap-logical-reasoning	Logical Reasoning	nexus:requiredByTask	aitask:code-generation	Code Generation	semapv:ManualMappingCuration	ibm-research	0.90	Reasoning about program logic and control flow
+ibmcap:ibm-cap-reading-comprehension	Reading Comprehension	nexus:requiredByTask	aitask:code-generation	Code Generation	semapv:ManualMappingCuration	ibm-research	0.85	Understanding natural language requirements
+ibmcap:ibm-cap-domain-knowledge	Domain Knowledge	nexus:requiredByTask	aitask:code-generation	Code Generation	semapv:ManualMappingCuration	ibm-research	0.80	Knowledge of programming languages and APIs
+ibmcap:ibm-cap-code-understanding	Code Understanding	nexus:requiredByTask	aitask:code-explanation	Code Explanation	semapv:ManualMappingCuration	ibm-research	0.95	Core capability for understanding code
+ibmcap:ibm-cap-text-generation	Text Generation	nexus:requiredByTask	aitask:code-explanation	Code Explanation	semapv:ManualMappingCuration	ibm-research	0.90	Generating clear natural language explanations
+ibmcap:ibm-cap-reading-comprehension	Reading Comprehension	nexus:requiredByTask	aitask:code-explanation	Code Explanation	semapv:ManualMappingCuration	ibm-research	0.80	Understanding code as a form of text
+ibmcap:ibm-cap-code-understanding	Code Understanding	nexus:requiredByTask	aitask:code-editing	Code Editing	semapv:ManualMappingCuration	ibm-research	0.95	Must understand existing code to edit it
+ibmcap:ibm-cap-code-generation	Code Generation	nexus:requiredByTask	aitask:code-editing	Code Editing	semapv:ManualMappingCuration	ibm-research	0.90	Generating modified or new code sections
+ibmcap:ibm-cap-logical-reasoning	Logical Reasoning	nexus:requiredByTask	aitask:code-editing	Code Editing	semapv:ManualMappingCuration	ibm-research	0.85	Reasoning about code changes and their effects

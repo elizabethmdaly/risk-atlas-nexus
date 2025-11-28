@@ -1,0 +1,159 @@
+aitasks:
+- id: code-editing
+  requiresCapability:
+  - ibm-cap-code-generation
+- id: code-generation
+  requiresCapability:
+  - ibm-cap-code-generation
+- id: code-editing
+  requiresCapability:
+  - ibm-cap-code-understanding
+- id: code-explanation
+  requiresCapability:
+  - ibm-cap-code-understanding
+- id: text-generation
+  requiresCapability:
+  - ibm-cap-common-sense-reasoning
+- id: question-answering
+  requiresCapability:
+  - ibm-cap-contextual-understanding
+- id: summarization
+  requiresCapability:
+  - ibm-cap-contextual-understanding
+- id: text-classification
+  requiresCapability:
+  - ibm-cap-contextual-understanding
+- id: text-generation
+  requiresCapability:
+  - ibm-cap-contextual-understanding
+- id: translation
+  requiresCapability:
+  - ibm-cap-contextual-understanding
+- id: code-generation
+  requiresCapability:
+  - ibm-cap-domain-knowledge
+- id: question-answering
+  requiresCapability:
+  - ibm-cap-domain-knowledge
+- id: question-answering
+  requiresCapability:
+  - ibm-cap-factual-accuracy
+- id: code-editing
+  requiresCapability:
+  - ibm-cap-logical-reasoning
+- id: code-generation
+  requiresCapability:
+  - ibm-cap-logical-reasoning
+- id: question-answering
+  requiresCapability:
+  - ibm-cap-logical-reasoning
+- id: code-explanation
+  requiresCapability:
+  - ibm-cap-reading-comprehension
+- id: code-generation
+  requiresCapability:
+  - ibm-cap-reading-comprehension
+- id: question-answering
+  requiresCapability:
+  - ibm-cap-reading-comprehension
+- id: summarization
+  requiresCapability:
+  - ibm-cap-reading-comprehension
+- id: text-classification
+  requiresCapability:
+  - ibm-cap-reading-comprehension
+- id: translation
+  requiresCapability:
+  - ibm-cap-reading-comprehension
+- id: code-explanation
+  requiresCapability:
+  - ibm-cap-text-generation
+- id: summarization
+  requiresCapability:
+  - ibm-cap-text-generation
+- id: text-generation
+  requiresCapability:
+  - ibm-cap-text-generation
+- id: translation
+  requiresCapability:
+  - ibm-cap-text-generation
+capabilities:
+- id: ibm-cap-code-generation
+  requiredByTask:
+  - code-editing
+- id: ibm-cap-code-generation
+  requiredByTask:
+  - code-generation
+- id: ibm-cap-code-understanding
+  requiredByTask:
+  - code-editing
+- id: ibm-cap-code-understanding
+  requiredByTask:
+  - code-explanation
+- id: ibm-cap-common-sense-reasoning
+  requiredByTask:
+  - text-generation
+- id: ibm-cap-contextual-understanding
+  requiredByTask:
+  - question-answering
+- id: ibm-cap-contextual-understanding
+  requiredByTask:
+  - summarization
+- id: ibm-cap-contextual-understanding
+  requiredByTask:
+  - text-classification
+- id: ibm-cap-contextual-understanding
+  requiredByTask:
+  - text-generation
+- id: ibm-cap-contextual-understanding
+  requiredByTask:
+  - translation
+- id: ibm-cap-domain-knowledge
+  requiredByTask:
+  - code-generation
+- id: ibm-cap-domain-knowledge
+  requiredByTask:
+  - question-answering
+- id: ibm-cap-factual-accuracy
+  requiredByTask:
+  - question-answering
+- id: ibm-cap-logical-reasoning
+  requiredByTask:
+  - code-editing
+- id: ibm-cap-logical-reasoning
+  requiredByTask:
+  - code-generation
+- id: ibm-cap-logical-reasoning
+  requiredByTask:
+  - question-answering
+- id: ibm-cap-reading-comprehension
+  requiredByTask:
+  - code-explanation
+- id: ibm-cap-reading-comprehension
+  requiredByTask:
+  - code-generation
+- id: ibm-cap-reading-comprehension
+  requiredByTask:
+  - question-answering
+- id: ibm-cap-reading-comprehension
+  requiredByTask:
+  - summarization
+- id: ibm-cap-reading-comprehension
+  requiredByTask:
+  - text-classification
+- id: ibm-cap-reading-comprehension
+  requiredByTask:
+  - translation
+- id: ibm-cap-text-generation
+  requiredByTask:
+  - code-explanation
+- id: ibm-cap-text-generation
+  requiredByTask:
+  - summarization
+- id: ibm-cap-text-generation
+  requiredByTask:
+  - text-generation
+- id: ibm-cap-text-generation
+  requiredByTask:
+  - translation
+

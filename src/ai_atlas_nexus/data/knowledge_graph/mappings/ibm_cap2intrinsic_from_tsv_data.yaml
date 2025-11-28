@@ -1,0 +1,99 @@
+adapters:
+- id: ibm-factuality-adapter-granite-3.3-8b-instruct-lora-query-expansion
+  implementsCapability_adapter:
+  - ibm-cap-causal-reasoning
+- id: ibm-factuality-adapter-granite-3.3-8b-instruct-lora-answerability-determination
+  implementsCapability_adapter:
+  - ibm-cap-contextual-understanding
+- id: ibm-factuality-adapter-granite-3.3-8b-instruct-lora-context-relevance
+  implementsCapability_adapter:
+  - ibm-cap-contextual-understanding
+- id: ibm-factuality-adapter-granite-3.3-8b-instruct-lora-query-expansion
+  implementsCapability_adapter:
+  - ibm-cap-contextual-understanding
+- id: ibm-factuality-adapter-granite-3.3-8b-instruct-lora-query-rewrite
+  implementsCapability_adapter:
+  - ibm-cap-contextual-understanding
+- id: ibm-factuality-adapter-granite-3.3-instruct-lora-passage-reranking
+  implementsCapability_adapter:
+  - ibm-cap-contextual-understanding
+- id: ibm-factuality-adapter-granite-3.3-8b-instruct-lora-answerability-determination
+  implementsCapability_adapter:
+  - ibm-cap-factual-accuracy
+- id: ibm-factuality-adapter-granite-3.3-8b-instruct-lora-answerability-determination
+  implementsCapability_adapter:
+  - ibm-cap-logical-reasoning
+- id: ibm-factuality-adapter-granite-3.3-8b-instruct-lora-context-relevance
+  implementsCapability_adapter:
+  - ibm-cap-logical-reasoning
+- id: ibm-factuality-adapter-granite-3.3-instruct-lora-passage-reranking
+  implementsCapability_adapter:
+  - ibm-cap-logical-reasoning
+- id: ibm-factuality-adapter-granite-3.3-8b-instruct-lora-answerability-determination
+  implementsCapability_adapter:
+  - ibm-cap-reading-comprehension
+- id: ibm-factuality-adapter-granite-3.3-8b-instruct-lora-context-relevance
+  implementsCapability_adapter:
+  - ibm-cap-reading-comprehension
+- id: ibm-factuality-adapter-granite-3.3-8b-instruct-lora-query-rewrite
+  implementsCapability_adapter:
+  - ibm-cap-reading-comprehension
+- id: ibm-factuality-adapter-granite-3.3-instruct-lora-passage-reranking
+  implementsCapability_adapter:
+  - ibm-cap-reading-comprehension
+- id: ibm-factuality-adapter-granite-3.3-8b-instruct-lora-query-expansion
+  implementsCapability_adapter:
+  - ibm-cap-text-generation
+- id: ibm-factuality-adapter-granite-3.3-8b-instruct-lora-query-rewrite
+  implementsCapability_adapter:
+  - ibm-cap-text-generation
+capabilities:
+- id: ibm-cap-causal-reasoning
+  implementedByAdapter:
+  - ibm-factuality-adapter-granite-3.3-8b-instruct-lora-query-expansion
+- id: ibm-cap-contextual-understanding
+  implementedByAdapter:
+  - ibm-factuality-adapter-granite-3.3-8b-instruct-lora-answerability-determination
+- id: ibm-cap-contextual-understanding
+  implementedByAdapter:
+  - ibm-factuality-adapter-granite-3.3-8b-instruct-lora-context-relevance
+- id: ibm-cap-contextual-understanding
+  implementedByAdapter:
+  - ibm-factuality-adapter-granite-3.3-8b-instruct-lora-query-expansion
+- id: ibm-cap-contextual-understanding
+  implementedByAdapter:
+  - ibm-factuality-adapter-granite-3.3-8b-instruct-lora-query-rewrite
+- id: ibm-cap-contextual-understanding
+  implementedByAdapter:
+  - ibm-factuality-adapter-granite-3.3-instruct-lora-passage-reranking
+- id: ibm-cap-factual-accuracy
+  implementedByAdapter:
+  - ibm-factuality-adapter-granite-3.3-8b-instruct-lora-answerability-determination
+- id: ibm-cap-logical-reasoning
+  implementedByAdapter:
+  - ibm-factuality-adapter-granite-3.3-8b-instruct-lora-answerability-determination
+- id: ibm-cap-logical-reasoning
+  implementedByAdapter:
+  - ibm-factuality-adapter-granite-3.3-8b-instruct-lora-context-relevance
+- id: ibm-cap-logical-reasoning
+  implementedByAdapter:
+  - ibm-factuality-adapter-granite-3.3-instruct-lora-passage-reranking
+- id: ibm-cap-reading-comprehension
+  implementedByAdapter:
+  - ibm-factuality-adapter-granite-3.3-8b-instruct-lora-answerability-determination
+- id: ibm-cap-reading-comprehension
+  implementedByAdapter:
+  - ibm-factuality-adapter-granite-3.3-8b-instruct-lora-context-relevance
+- id: ibm-cap-reading-comprehension
+  implementedByAdapter:
+  - ibm-factuality-adapter-granite-3.3-8b-instruct-lora-query-rewrite
+- id: ibm-cap-reading-comprehension
+  implementedByAdapter:
+  - ibm-factuality-adapter-granite-3.3-instruct-lora-passage-reranking
+- id: ibm-cap-text-generation
+  implementedByAdapter:
+  - ibm-factuality-adapter-granite-3.3-8b-instruct-lora-query-expansion
+- id: ibm-cap-text-generation
+  implementedByAdapter:
+  - ibm-factuality-adapter-granite-3.3-8b-instruct-lora-query-rewrite
+
