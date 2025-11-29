@@ -121,9 +121,9 @@ The context document explains:
 |--------|--------|
 | **Language** | Python 3.11.x (required!) |
 | **License** | Apache 2.0 |
-| **Version** | 1.0.4 |
+| **Version** | 1.1.0 |
 | **Main Class** | `AIAtlasNexus` |
-| **Test Suite** | 54 tests, all passing |
+| **Test Suite** | 65 tests, all passing |
 | **Code Style** | Black + isort (auto-formatted) |
 | **Schema System** | LinkML (YAML → Python) |
 | **Data Format** | YAML (knowledge graph) |
@@ -135,9 +135,13 @@ The context document explains:
 - **254 actions** for risk mitigation
 - **17 risk controls** (detectors)
 - **26 AI principles** from various orgs
-- **48 Python files** (~15K lines of code)
+- **11 AI capabilities** across 5 domains (IBM AI Capabilities Framework)
+- **8 AI tasks** with capability mappings
+- **48+ Python files** (~16K lines of code)
 - **25+ YAML data files**
 - **100+ cross-taxonomy mappings**
+- **26 task→capability mappings**
+- **16 capability→intrinsic mappings**
 
 ### Critical Commands
 
@@ -168,10 +172,13 @@ make test                          # Run tests
 
 1. **`src/ai_atlas_nexus/library.py`** - Main API (50+ methods)
 2. **`src/ai_atlas_nexus/ai_risk_ontology/schema/ai-risk-ontology.yaml`** - Schema definition
-3. **`src/ai_atlas_nexus/data/knowledge_graph/*.yaml`** - Instance data (25+ files)
-4. **`src/ai_atlas_nexus/blocks/inference/`** - LLM integrations
-5. **`src/ai_atlas_nexus/blocks/risk_detector/generic.py`** - Risk identification
-6. **`tests/ai_atlas_nexus/test_library.py`** - Main test suite
+3. **`src/ai_atlas_nexus/ai_risk_ontology/schema/ai_capability.yaml`** - Capabilities taxonomy schema
+4. **`src/ai_atlas_nexus/data/knowledge_graph/*.yaml`** - Instance data (25+ files)
+5. **`src/ai_atlas_nexus/blocks/ai_atlas_explorer/`** - Generic graph navigation system
+6. **`src/ai_atlas_nexus/blocks/inference/`** - LLM integrations
+7. **`src/ai_atlas_nexus/blocks/risk_detector/generic.py`** - Risk identification
+8. **`tests/ai_atlas_nexus/test_library.py`** - Main test suite (40 tests)
+9. **`tests/blocks/ai_atlas_explorer/test_integration.py`** - AtlasExplorer tests (11 tests)
 
 ---
 
@@ -301,10 +308,11 @@ Before considering yourself onboarded:
 - [ ] Clone repository successfully
 - [ ] Create Python 3.11 virtual environment
 - [ ] Install dependencies with `pip install -e ".[ollama]"`
-- [ ] Run `pytest` - all 54 tests pass
+- [ ] Run `pytest` - all 65 tests pass
 - [ ] Import library: `from ai_atlas_nexus import AIAtlasNexus`
 - [ ] Initialize: `ran = AIAtlasNexus()`
 - [ ] Get risks: `risks = ran.get_all_risks()` (returns 556 risks)
+- [ ] Get capabilities: `from ai_atlas_nexus.blocks.ai_atlas_explorer import AtlasExplorer; explorer = AtlasExplorer(ran._ontology); caps = explorer.get_all_capabilities()` (returns 11 capabilities)
 - [ ] Run pre-commit hooks: `pre-commit run --all-files`
 - [ ] Build docs: `JUPYTER_PLATFORM_DIRS=1 mkdocs serve`
 - [ ] Understand at least 3 critical code paths from PROJECT_CONTEXT.md
@@ -376,6 +384,7 @@ When making significant changes to the codebase:
 | Version | Date | Changes |
 |---------|------|---------|
 | 1.0 | 2025-11-28 | Initial agent context documentation created |
+| 1.1 | 2025-11-28 | Updated for v1.1.0: Added capabilities taxonomy, AtlasExplorer, 65 tests |
 
 ---
 
@@ -442,7 +451,8 @@ Week 2+: Advanced
 ---
 
 **Created**: 2025-11-28
-**For**: AI Atlas Nexus v1.0.4
+**Updated**: 2025-11-28
+**For**: AI Atlas Nexus v1.1.0
 **By**: Claude Code Agent
 **Purpose**: Comprehensive onboarding for future agents
 

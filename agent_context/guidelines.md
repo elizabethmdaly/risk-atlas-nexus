@@ -909,5 +909,5 @@ When reviewing PRs or submitting code:
 
 ---
 
-**Version**: 1.0.4
+**Version**: 1.1.0
 **Last Updated**: 2025-11-28

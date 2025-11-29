@@ -821,14 +821,14 @@ RITS_API_URL=<url>
 
 ## Project Metrics
 
-**Codebase size** (as of v1.0.4):
-- Python files: 48
-- Lines of code: ~15,000 (excluding generated datamodel)
-- Generated datamodel: 2,107 lines
-- YAML data files: 25+
-- Knowledge graph entities: 556 risks, 254 actions, 17 controls
+**Codebase size** (as of v1.1.0):
+- Python files: 48+
+- Lines of code: ~16,000 (excluding generated datamodel)
+- Generated datamodel: 2,200+ lines
+- YAML data files: 28+
+- Knowledge graph entities: 556 risks, 254 actions, 17 controls, 11 capabilities
+- Test suite: 65 tests across 5 test files
 - Taxonomies integrated: 11
-- Tests: 54 (all passing)
 - Test coverage: >80%
 
 **Documentation**:
@@ -915,6 +915,6 @@ related = ran.get_related_risks(id="atlas-toxic-output")
 
 ---
 
-**Document Version**: 1.0
+**Document Version**: 1.1
 **Last Updated**: 2025-11-28
-**Codebase Version**: 1.0.4
+**Codebase Version**: 1.1.0

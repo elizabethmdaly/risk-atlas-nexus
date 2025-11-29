@@ -177,11 +177,12 @@ ai-atlas-nexus/
 │   ├── examples/notebooks/          # Jupyter examples
 │   ├── ontology/                    # Auto-generated schema docs
 │   └── concepts/                    # Conceptual guides
-├── tests/                           # Test suite
-│   ├── ai_atlas_nexus/
+├── tests/                           # Test suite (65 tests total)
+│   ├── ai_atlas_nexus/              # Main library tests
 │   │   ├── test_library.py          # 40 library tests
-│   │   ├── test_shieldgemma.py      # 12 integration tests
-│   │   └── toolkit/                 # Utility tests
+│   │   ├── test_shieldgemma.py      # 14 integration tests
+│   │   └── toolkit/                 # 3 utility tests
+│   ├── blocks/ai_atlas_explorer/    # 11 AtlasExplorer navigation tests
 │   └── fixtures/                    # Test data
 ├── graph_export/                    # Exported graph formats
 │   ├── yaml/                        # Full graph YAML
@@ -373,7 +374,7 @@ pytest tests/ai_atlas_nexus/test_library.py
 pytest --cov=ai_atlas_nexus --cov-report=html
 ```
 
-Expected results: **54 tests, all passing**
+Expected results: **65 tests, all passing**
 
 ### Building Documentation
 
@@ -781,6 +782,6 @@ For questions, issues, or contributions:
 
 ---
 
-**Version**: 1.0.4
+**Version**: 1.1.0
 **Last Updated**: 2025-11-28
 **License**: Apache 2.0
