@@ -1,7 +1,8 @@
 id: https://ibm.github.io/ai-atlas-nexus/ontology/ai_capability
 name: ai_capability
 description:
-  Vocabulary describing AI capabilities as used by IBM AI Capabilities Framework
+  Vocabulary describing AI capabilities aligned with the W3C Data Privacy Vocabulary (DPV) Capability concept.
+  Capabilities represent what AI technologies are capable of achieving or providing, distinct from their intended purpose or actual deployment usage.
 default_curi_maps:
   - semweb_context
 imports:
@@ -13,6 +14,9 @@ prefixes:
   airo: https://w3id.org/airo#
   nexus: https://ibm.github.io/ai-atlas-nexus/ontology/
   skos: http://www.w3.org/2004/02/skos/core#
+  dpv: https://w3id.org/dpv#
+  dpv-ai: https://w3id.org/dpv/ai#
+  tech: https://w3id.org/dpv/tech#
 default_range: string
 default_prefix: nexus
 
@@ -66,8 +70,16 @@ classes:
     is_a: Entity
     mixins:
       - CapabilityConcept
-    description: A specific AI capability or ability, such as reading comprehension, logical reasoning, or code generation
-    class_uri: airo:Capability
+    description: >
+      A specific AI capability or ability, such as reading comprehension, logical reasoning, or code generation.
+      Aligned with the W3C DPV AI extension dpv-ai:Capability concept, representing what an AI technology is capable of achieving or providing.
+      Capabilities are distinct from:
+      (1) the intended purpose for which the technology is designed,
+      (2) the actual tasks performed in a specific deployment context, and
+      (3) the technical implementation mechanisms (intrinsics, adapters) that enable the capability.
+    class_uri: dpv-ai:Capability
+    broad_mappings:
+      - tech:Capability
     attributes:
       tag:
         description: A short version of the name
@@ -87,10 +99,14 @@ classes:
       - evaluatedByBenchmark
       - implementedByIntrinsic
       - implementedByAdapter
+      - possessedByAi
 
   CapabilityConcept:
     is_a: Entity
-    description: An umbrella term for referring to capability domains, groups, and individual capabilities
+    description: >
+      An umbrella term for referring to capability domains, groups, and individual capabilities.
+      This abstract concept enables hierarchical organization and cross-referencing of capabilities
+      using SKOS-based semantic relationships (exactMatch, closeMatch, broadMatch, narrowMatch, relatedMatch).
     class_uri: nexus:CapabilityConcept
     slots:
 
@@ -144,7 +160,10 @@ slots:
 
   # Task-capability relationships
   requiredByTask:
-    description: Indicates that this capability is required to perform a specific AI task
+    description: >
+      Indicates that this capability is required to perform a specific AI task.
+      This links abstract capabilities (technical abilities) to concrete tasks (application-level operations).
+      An AI system with this capability can perform tasks that require it.
     range: AiTask
     multivalued: true
     inlined: false
@@ -176,7 +195,10 @@ slots:
 
   # Intrinsic-capability relationships
   implementedByIntrinsic:
-    description: Indicates that this capability is implemented by a specific LLM intrinsic
+    description: >
+      Indicates that this capability is implemented by a specific LLM intrinsic.
+      This relationship distinguishes the abstract capability (what can be done) from
+      the technical implementation mechanism (how it is done at the model component level).
     range: LLMIntrinsic
     multivalued: true
     inlined: false
@@ -192,7 +214,10 @@ slots:
 
   # Adapter-capability relationships
   implementedByAdapter:
-    description: Indicates that this capability is implemented by a specific adapter
+    description: >
+      Indicates that this capability is implemented by a specific adapter.
+      This relationship distinguishes the abstract capability (what can be done) from
+      the technical implementation mechanism (how it is added/extended via adapters).
     range: Adapter
     multivalued: true
     inlined: false
@@ -205,6 +230,19 @@ slots:
     multivalued: true
     inlined: false
     inverse: implementedByAdapter
+
+  # AI System-capability relationships
+  possessedByAi:
+    description: >
+      Indicates that this capability is possessed by a specific AI system or component.
+      Inverse of hasCapability, allowing navigation from capabilities to AI systems.
+      This enables queries like "which AI systems have this capability?"
+    domain: Capability
+    range: BaseAi
+    slot_uri: tech:hasCapability
+    multivalued: true
+    inlined: false
+    inverse: hasCapability
 
   tag:
     description: A short identifier for the capability

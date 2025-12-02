@@ -15,6 +15,7 @@ prefixes:
   linkml: https://w3id.org/linkml/
   airo: https://w3id.org/airo#
   nexus: https://ibm.github.io/ai-atlas-nexus/ontology/
+  tech: https://w3id.org/dpv/tech#
 
 default_range: string
 default_prefix: nexus
@@ -34,6 +35,7 @@ classes:
       - hasDocumentation
       - hasLicense
       - performsTask
+      - hasCapability
       - isProvidedBy
 
   AiSystem:
@@ -191,6 +193,18 @@ slots:
     inlined: false
     description: relationship indicating the AI tasks an AI model can perform.
     range: AiTask
+  hasCapability:
+    slot_uri: tech:hasCapability
+    description: >
+      Indicates the technical capabilities this AI possesses.
+      Capabilities represent what the AI can do (its technical abilities),
+      which may be distinct from what it is intended to do (its purpose)
+      or what it is actually doing in a specific deployment context.
+      Aligned with W3C DPV TECH extension (tech:hasCapability) and
+      AIRO ontology (airo:hasCapability).
+    multivalued: true
+    inlined: false
+    range: Capability
   fine_tuning:
     range: string
     description: A description of the fine-tuning mechanism(s) applied to a model.

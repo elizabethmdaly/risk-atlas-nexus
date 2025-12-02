@@ -1,0 +1,23 @@
+#curie_map:
+#  ibmcap: https://ibm.github.io/ai-atlas-nexus/ontology/capabilities/
+#  bigbench: https://github.com/google/BIG-bench/blob/main/bigbench/benchmark_tasks/keywords/
+#  semapv: https://w3id.org/semapv/vocab/
+#  skos: http://www.w3.org/2004/02/skos/core#
+#mapping_set_id: https://github.com/IBM/ai-atlas-nexus/tree/main/src/data/mappings/ibm_cap2bigbench.tsv
+#mapping_set_title: IBM AI Capabilities to BIG-bench Capability Keywords Mapping
+#mapping_set_description: Semantic mappings between IBM AI Capabilities Framework and BIG-bench capability keywords. BIG-bench consists of 214 tasks tagged with capability keywords.
+#license: https://www.apache.org/licenses/LICENSE-2.0.html
+#mapping_date: "2025-12-02"
+#mapping_provider: IBM Research
+subject_id	subject_label	predicate_id	object_id	object_label	mapping_justification	author_id	confidence	comment
+ibmcap:ibm-cap-reading-comprehension	Reading Comprehension	skos:exactMatch	bigbench:reading-comprehension	Reading Comprehension	semapv:ManualMappingCuration	elizabeth.daly@ie.ibm.com	0.95	Both refer to the same core capability; BIG-bench has 36 related tasks
+ibmcap:ibm-cap-contextual-understanding	Contextual Understanding	skos:relatedMatch	bigbench:contextual-qa	Contextual Question-Answering	semapv:ManualMappingCuration	elizabeth.daly@ie.ibm.com	0.85	Contextual QA requires contextual understanding capability
+ibmcap:ibm-cap-text-generation	Text Generation	skos:broadMatch	bigbench:free-response	Free Response	semapv:ManualMappingCuration	elizabeth.daly@ie.ibm.com	0.80	BIG-bench "free response" is a format; IBM capability is broader concept
+ibmcap:ibm-cap-logical-reasoning	Logical Reasoning	skos:exactMatch	bigbench:logical-reasoning	Logical Reasoning	semapv:ManualMappingCuration	elizabeth.daly@ie.ibm.com	0.95	Direct correspondence; BIG-bench has 59 logical reasoning tasks
+ibmcap:ibm-cap-causal-reasoning	Causal Reasoning	skos:exactMatch	bigbench:causal-reasoning	Causal Reasoning	semapv:ManualMappingCuration	elizabeth.daly@ie.ibm.com	0.95	Direct match between capability concepts
+ibmcap:ibm-cap-mathematical-reasoning	Mathematical Reasoning	skos:closeMatch	bigbench:mathematics	Mathematics	semapv:ManualMappingCuration	elizabeth.daly@ie.ibm.com	0.90	IBM term broader (includes reasoning); BIG-bench focuses on math tasks (28 tasks)
+ibmcap:ibm-cap-domain-knowledge	Domain Knowledge	skos:broadMatch	bigbench:knowledge-domains	Knowledge Domains	semapv:ManualMappingCuration	elizabeth.daly@ie.ibm.com	0.85	IBM capability encompasses multiple BIG-bench domain-specific keywords
+ibmcap:ibm-cap-common-sense-reasoning	Common Sense Reasoning	skos:exactMatch	bigbench:common-sense	Common Sense	semapv:ManualMappingCuration	elizabeth.daly@ie.ibm.com	0.95	Both refer to everyday practical reasoning capabilities
+ibmcap:ibm-cap-factual-accuracy	Factual Accuracy	skos:relatedMatch	bigbench:truthfulness	Truthfulness	semapv:ManualMappingCuration	elizabeth.daly@ie.ibm.com	0.90	Related concepts - IBM focuses on output accuracy, BIG-bench on truthfulness
+ibmcap:ibm-cap-code-generation	Code Generation	skos:relatedMatch	bigbench:computer-code	Computer Code	semapv:ManualMappingCuration	elizabeth.daly@ie.ibm.com	0.85	BIG-bench includes both generation and understanding; IBM capability is more specific
+ibmcap:ibm-cap-code-understanding	Code Understanding	skos:relatedMatch	bigbench:computer-code	Computer Code	semapv:ManualMappingCuration	elizabeth.daly@ie.ibm.com	0.85	BIG-bench includes both generation and understanding; IBM capability is more specific

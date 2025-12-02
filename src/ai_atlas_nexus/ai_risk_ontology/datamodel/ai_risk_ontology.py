@@ -988,6 +988,8 @@ class BaseAi(Entity):
                        'CapabilityTaxonomy'],
          'slot_uri': 'airo:hasLicense'} })
     performsTask: Optional[list[str]] = Field(default=[], description="""relationship indicating the AI tasks an AI model can perform.""", json_schema_extra = { "linkml_meta": {'domain_of': ['BaseAi']} })
+    hasCapability: Optional[list[str]] = Field(default=[], description="""Indicates the technical capabilities this AI possesses. Capabilities represent what the AI can do (its technical abilities), which may be distinct from what it is intended to do (its purpose) or what it is actually doing in a specific deployment context. Aligned with W3C DPV TECH extension (tech:hasCapability) and AIRO ontology (airo:hasCapability).
+""", json_schema_extra = { "linkml_meta": {'domain_of': ['BaseAi'], 'slot_uri': 'tech:hasCapability'} })
     isProvidedBy: Optional[str] = Field(default=None, description="""A relationship indicating the AI model has been provided by an AI model provider.""", json_schema_extra = { "linkml_meta": {'domain_of': ['BaseAi'], 'slot_uri': 'airo:isProvidedBy'} })
     id: str = Field(default=..., description="""A unique identifier to this instance of the model element. Example identifiers include UUID, URI, URN, etc.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity'], 'slot_uri': 'schema:identifier'} })
     name: Optional[str] = Field(default=None, description="""A text name of this instance.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity', 'BenchmarkMetadataCard'], 'slot_uri': 'schema:name'} })
@@ -1039,6 +1041,8 @@ class AiSystem(BaseAi):
                        'CapabilityTaxonomy'],
          'slot_uri': 'airo:hasLicense'} })
     performsTask: Optional[list[str]] = Field(default=[], description="""relationship indicating the AI tasks an AI model can perform.""", json_schema_extra = { "linkml_meta": {'domain_of': ['BaseAi']} })
+    hasCapability: Optional[list[str]] = Field(default=[], description="""Indicates the technical capabilities this AI possesses. Capabilities represent what the AI can do (its technical abilities), which may be distinct from what it is intended to do (its purpose) or what it is actually doing in a specific deployment context. Aligned with W3C DPV TECH extension (tech:hasCapability) and AIRO ontology (airo:hasCapability).
+""", json_schema_extra = { "linkml_meta": {'domain_of': ['BaseAi'], 'slot_uri': 'tech:hasCapability'} })
     isProvidedBy: Optional[str] = Field(default=None, description="""A relationship indicating the AI model has been provided by an AI model provider.""", json_schema_extra = { "linkml_meta": {'domain_of': ['BaseAi'], 'slot_uri': 'airo:isProvidedBy'} })
     id: str = Field(default=..., description="""A unique identifier to this instance of the model element. Example identifiers include UUID, URI, URN, etc.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity'], 'slot_uri': 'schema:identifier'} })
     name: Optional[str] = Field(default=None, description="""A text name of this instance.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity', 'BenchmarkMetadataCard'], 'slot_uri': 'schema:name'} })
@@ -1087,6 +1091,8 @@ class AiAgent(AiSystem):
                        'CapabilityTaxonomy'],
          'slot_uri': 'airo:hasLicense'} })
     performsTask: Optional[list[str]] = Field(default=[], description="""relationship indicating the AI tasks an AI model can perform.""", json_schema_extra = { "linkml_meta": {'domain_of': ['BaseAi']} })
+    hasCapability: Optional[list[str]] = Field(default=[], description="""Indicates the technical capabilities this AI possesses. Capabilities represent what the AI can do (its technical abilities), which may be distinct from what it is intended to do (its purpose) or what it is actually doing in a specific deployment context. Aligned with W3C DPV TECH extension (tech:hasCapability) and AIRO ontology (airo:hasCapability).
+""", json_schema_extra = { "linkml_meta": {'domain_of': ['BaseAi'], 'slot_uri': 'tech:hasCapability'} })
     isProvidedBy: Optional[str] = Field(default=None, description="""A relationship indicating the AI agent has been provided by an AI systems provider.""", json_schema_extra = { "linkml_meta": {'domain_of': ['BaseAi'], 'slot_uri': 'airo:isProvidedBy'} })
     id: str = Field(default=..., description="""A unique identifier to this instance of the model element. Example identifiers include UUID, URI, URN, etc.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity'], 'slot_uri': 'schema:identifier'} })
     name: Optional[str] = Field(default=None, description="""A text name of this instance.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity', 'BenchmarkMetadataCard'], 'slot_uri': 'schema:name'} })
@@ -1136,6 +1142,8 @@ class AiModel(BaseAi):
                        'CapabilityTaxonomy'],
          'slot_uri': 'airo:hasLicense'} })
     performsTask: Optional[list[str]] = Field(default=[], description="""relationship indicating the AI tasks an AI model can perform.""", json_schema_extra = { "linkml_meta": {'domain_of': ['BaseAi']} })
+    hasCapability: Optional[list[str]] = Field(default=[], description="""Indicates the technical capabilities this AI possesses. Capabilities represent what the AI can do (its technical abilities), which may be distinct from what it is intended to do (its purpose) or what it is actually doing in a specific deployment context. Aligned with W3C DPV TECH extension (tech:hasCapability) and AIRO ontology (airo:hasCapability).
+""", json_schema_extra = { "linkml_meta": {'domain_of': ['BaseAi'], 'slot_uri': 'tech:hasCapability'} })
     isProvidedBy: Optional[str] = Field(default=None, description="""A relationship indicating the AI model has been provided by an AI model provider.""", json_schema_extra = { "linkml_meta": {'domain_of': ['BaseAi'], 'slot_uri': 'airo:isProvidedBy'} })
     id: str = Field(default=..., description="""A unique identifier to this instance of the model element. Example identifiers include UUID, URI, URN, etc.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity'], 'slot_uri': 'schema:identifier'} })
     name: Optional[str] = Field(default=None, description="""A text name of this instance.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity', 'BenchmarkMetadataCard'], 'slot_uri': 'schema:name'} })
@@ -1201,6 +1209,8 @@ class LargeLanguageModel(AiModel):
                        'CapabilityTaxonomy'],
          'slot_uri': 'airo:hasLicense'} })
     performsTask: Optional[list[str]] = Field(default=[], description="""relationship indicating the AI tasks an AI model can perform.""", json_schema_extra = { "linkml_meta": {'domain_of': ['BaseAi']} })
+    hasCapability: Optional[list[str]] = Field(default=[], description="""Indicates the technical capabilities this AI possesses. Capabilities represent what the AI can do (its technical abilities), which may be distinct from what it is intended to do (its purpose) or what it is actually doing in a specific deployment context. Aligned with W3C DPV TECH extension (tech:hasCapability) and AIRO ontology (airo:hasCapability).
+""", json_schema_extra = { "linkml_meta": {'domain_of': ['BaseAi'], 'slot_uri': 'tech:hasCapability'} })
     isProvidedBy: Optional[str] = Field(default=None, description="""A relationship indicating the AI model has been provided by an AI model provider.""", json_schema_extra = { "linkml_meta": {'domain_of': ['BaseAi'], 'slot_uri': 'airo:isProvidedBy'} })
     id: str = Field(default=..., description="""A unique identifier to this instance of the model element. Example identifiers include UUID, URI, URN, etc.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity'], 'slot_uri': 'schema:identifier'} })
     name: Optional[str] = Field(default=None, description="""A text name of this instance.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity', 'BenchmarkMetadataCard'], 'slot_uri': 'schema:name'} })
@@ -1682,6 +1692,8 @@ class Adapter(LargeLanguageModel, Entity):
     producer: Optional[str] = Field(default=None, description="""A relationship to the Organization instance which produces this instance.""", json_schema_extra = { "linkml_meta": {'domain_of': ['BaseAi']} })
     hasModelCard: Optional[list[str]] = Field(default=[], description="""A relationship to model card references.""", json_schema_extra = { "linkml_meta": {'domain_of': ['BaseAi']} })
     performsTask: Optional[list[str]] = Field(default=[], description="""relationship indicating the AI tasks an AI model can perform.""", json_schema_extra = { "linkml_meta": {'domain_of': ['BaseAi']} })
+    hasCapability: Optional[list[str]] = Field(default=[], description="""Indicates the technical capabilities this AI possesses. Capabilities represent what the AI can do (its technical abilities), which may be distinct from what it is intended to do (its purpose) or what it is actually doing in a specific deployment context. Aligned with W3C DPV TECH extension (tech:hasCapability) and AIRO ontology (airo:hasCapability).
+""", json_schema_extra = { "linkml_meta": {'domain_of': ['BaseAi'], 'slot_uri': 'tech:hasCapability'} })
     isProvidedBy: Optional[str] = Field(default=None, description="""A relationship indicating the AI model has been provided by an AI model provider.""", json_schema_extra = { "linkml_meta": {'domain_of': ['BaseAi'], 'slot_uri': 'airo:isProvidedBy'} })
 
 
@@ -1771,7 +1783,8 @@ class CapabilityTaxonomy(Entity):
 
 class CapabilityConcept(Entity):
     """
-    An umbrella term for referring to capability domains, groups, and individual capabilities
+    An umbrella term for referring to capability domains, groups, and individual capabilities. This abstract concept enables hierarchical organization and cross-referencing of capabilities using SKOS-based semantic relationships (exactMatch, closeMatch, broadMatch, narrowMatch, relatedMatch).
+
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'class_uri': 'nexus:CapabilityConcept',
          'from_schema': 'https://ibm.github.io/ai-atlas-nexus/ontology/ai_capability'})
@@ -1871,9 +1884,11 @@ class CapabilityGroup(CapabilityConcept, Entity):
 
 class Capability(CapabilityConcept, Entity):
     """
-    A specific AI capability or ability, such as reading comprehension, logical reasoning, or code generation
+    A specific AI capability or ability, such as reading comprehension, logical reasoning, or code generation. Aligned with the W3C DPV AI extension dpv-ai:Capability concept, representing what an AI technology is capable of achieving or providing. Capabilities are distinct from: (1) the intended purpose for which the technology is designed, (2) the actual tasks performed in a specific deployment context, and (3) the technical implementation mechanisms (intrinsics, adapters) that enable the capability.
+
     """
-    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'class_uri': 'airo:Capability',
+    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'broad_mappings': ['tech:Capability'],
+         'class_uri': 'dpv-ai:Capability',
          'from_schema': 'https://ibm.github.io/ai-atlas-nexus/ontology/ai_capability',
          'mixins': ['CapabilityConcept'],
          'slot_usage': {'isPartOf': {'description': 'A relationship where a capability '
@@ -1905,10 +1920,18 @@ class Capability(CapabilityConcept, Entity):
          'slot_uri': 'skos:narrowMatch'} })
     relatedMatch: Optional[list[str]] = Field(default=[], description="""Indicates that two capability concepts are related in some way""", json_schema_extra = { "linkml_meta": {'domain_of': ['RiskGroup', 'Risk', 'CapabilityGroup', 'Capability'],
          'slot_uri': 'skos:relatedMatch'} })
-    requiredByTask: Optional[list[str]] = Field(default=[], description="""Indicates that this capability is required to perform a specific AI task""", json_schema_extra = { "linkml_meta": {'domain_of': ['Capability'], 'inverse': 'requiresCapability'} })
+    requiredByTask: Optional[list[str]] = Field(default=[], description="""Indicates that this capability is required to perform a specific AI task. This links abstract capabilities (technical abilities) to concrete tasks (application-level operations). An AI system with this capability can perform tasks that require it.
+""", json_schema_extra = { "linkml_meta": {'domain_of': ['Capability'], 'inverse': 'requiresCapability'} })
     evaluatedByBenchmark: Optional[list[str]] = Field(default=[], description="""Indicates that this capability is evaluated by a specific benchmark""", json_schema_extra = { "linkml_meta": {'domain_of': ['Capability'], 'inverse': 'evaluatesCapability'} })
-    implementedByIntrinsic: Optional[list[str]] = Field(default=[], description="""Indicates that this capability is implemented by a specific LLM intrinsic""", json_schema_extra = { "linkml_meta": {'domain_of': ['Capability'], 'inverse': 'implementsCapability'} })
-    implementedByAdapter: Optional[list[str]] = Field(default=[], description="""Indicates that this capability is implemented by a specific adapter""", json_schema_extra = { "linkml_meta": {'domain_of': ['Capability'], 'inverse': 'implementsCapability_adapter'} })
+    implementedByIntrinsic: Optional[list[str]] = Field(default=[], description="""Indicates that this capability is implemented by a specific LLM intrinsic. This relationship distinguishes the abstract capability (what can be done) from the technical implementation mechanism (how it is done at the model component level).
+""", json_schema_extra = { "linkml_meta": {'domain_of': ['Capability'], 'inverse': 'implementsCapability'} })
+    implementedByAdapter: Optional[list[str]] = Field(default=[], description="""Indicates that this capability is implemented by a specific adapter. This relationship distinguishes the abstract capability (what can be done) from the technical implementation mechanism (how it is added/extended via adapters).
+""", json_schema_extra = { "linkml_meta": {'domain_of': ['Capability'], 'inverse': 'implementsCapability_adapter'} })
+    possessedByAi: Optional[list[str]] = Field(default=[], description="""Indicates that this capability is possessed by a specific AI system or component. Inverse of hasCapability, allowing navigation from capabilities to AI systems. This enables queries like \"which AI systems have this capability?\"
+""", json_schema_extra = { "linkml_meta": {'domain': 'Capability',
+         'domain_of': ['Capability'],
+         'inverse': 'hasCapability',
+         'slot_uri': 'tech:hasCapability'} })
     tag: Optional[str] = Field(default=None, description="""A short version of the name""", json_schema_extra = { "linkml_meta": {'domain_of': ['Risk', 'Capability']} })
     id: str = Field(default=..., description="""A unique identifier to this instance of the model element. Example identifiers include UUID, URI, URN, etc.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity'], 'slot_uri': 'schema:identifier'} })
     name: Optional[str] = Field(default=None, description="""A text name of this instance.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity', 'BenchmarkMetadataCard'], 'slot_uri': 'schema:name'} })

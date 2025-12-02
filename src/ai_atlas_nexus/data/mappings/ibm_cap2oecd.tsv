@@ -1,0 +1,23 @@
+#curie_map:
+#  ibmcap: https://ibm.github.io/ai-atlas-nexus/ontology/capabilities/
+#  oecd: https://www.oecd.org/ai-capabilities/domains/
+#  semapv: https://w3id.org/semapv/vocab/
+#  skos: http://www.w3.org/2004/02/skos/core#
+#mapping_set_id: https://github.com/IBM/ai-atlas-nexus/tree/main/src/data/mappings/ibm_cap2oecd.tsv
+#mapping_set_title: IBM AI Capabilities to OECD AI Capability Indicators Mapping
+#mapping_set_description: Semantic mappings between IBM AI Capabilities Framework and OECD AI Capability Indicators. OECD framework measures capabilities across nine domains.
+#license: https://www.apache.org/licenses/LICENSE-2.0.html
+#mapping_date: "2025-12-02"
+#mapping_provider: IBM Research
+subject_id	subject_label	predicate_id	object_id	object_label	mapping_justification	author_id	confidence	comment
+ibmcap:ibm-cap-reading-comprehension	Reading Comprehension	skos:narrowMatch	oecd:language	Language	semapv:ManualMappingCuration	elizabeth.daly@ie.ibm.com	0.85	Reading comprehension is part of OECD's broader Language domain
+ibmcap:ibm-cap-contextual-understanding	Contextual Understanding	skos:narrowMatch	oecd:language	Language	semapv:ManualMappingCuration	elizabeth.daly@ie.ibm.com	0.85	Contextual understanding falls under OECD Language domain (Learning through language)
+ibmcap:ibm-cap-text-generation	Text Generation	skos:narrowMatch	oecd:social-interaction	Social Interaction	semapv:ManualMappingCuration	elizabeth.daly@ie.ibm.com	0.80	Text generation relates to OECD Communication capability
+ibmcap:ibm-cap-logical-reasoning	Logical Reasoning	skos:narrowMatch	oecd:problem-solving	Problem Solving	semapv:ManualMappingCuration	elizabeth.daly@ie.ibm.com	0.85	Logical reasoning is a component of problem solving
+ibmcap:ibm-cap-causal-reasoning	Causal Reasoning	skos:narrowMatch	oecd:problem-solving	Problem Solving	semapv:ManualMappingCuration	elizabeth.daly@ie.ibm.com	0.85	Causal reasoning is a component of problem solving
+ibmcap:ibm-cap-mathematical-reasoning	Mathematical Reasoning	skos:narrowMatch	oecd:problem-solving	Problem Solving	semapv:ManualMappingCuration	elizabeth.daly@ie.ibm.com	0.85	Math reasoning is a component of problem solving
+ibmcap:ibm-cap-domain-knowledge	Domain Knowledge	skos:narrowMatch	oecd:language	Language	semapv:ManualMappingCuration	elizabeth.daly@ie.ibm.com	0.80	Domain knowledge relates to OECD Knowledge representation subdomain
+ibmcap:ibm-cap-common-sense-reasoning	Common Sense Reasoning	skos:narrowMatch	oecd:language	Language	semapv:ManualMappingCuration	elizabeth.daly@ie.ibm.com	0.80	Common sense relates to OECD Reasoning about knowledge subdomain
+ibmcap:ibm-cap-factual-accuracy	Factual Accuracy	skos:relatedMatch	oecd:trustworthiness	Trustworthiness	semapv:ManualMappingCuration	elizabeth.daly@ie.ibm.com	0.85	Factual accuracy is a component of trustworthy AI systems
+ibmcap:ibm-cap-code-generation	Code Generation	skos:narrowMatch	oecd:creativity	Creativity	semapv:ManualMappingCuration	elizabeth.daly@ie.ibm.com	0.80	Code generation relates to OECD's creativity domain
+ibmcap:ibm-cap-code-understanding	Code Understanding	skos:narrowMatch	oecd:language	Language	semapv:ManualMappingCuration	elizabeth.daly@ie.ibm.com	0.75	Code understanding involves comprehension, part of Language domain

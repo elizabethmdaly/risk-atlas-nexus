@@ -1,0 +1,20 @@
+#curie_map:
+#  ibmcap: https://ibm.github.io/ai-atlas-nexus/ontology/capabilities/
+#  helm: https://crfm.stanford.edu/helm/scenarios/
+#  semapv: https://w3id.org/semapv/vocab/
+#  skos: http://www.w3.org/2004/02/skos/core#
+#mapping_set_id: https://github.com/IBM/ai-atlas-nexus/tree/main/src/data/mappings/ibm_cap2helm.tsv
+#mapping_set_title: IBM AI Capabilities to HELM Scenarios Mapping
+#mapping_set_description: Semantic mappings between IBM AI Capabilities Framework and HELM evaluation scenarios. HELM provides holistic evaluation across scenarios and metrics.
+#license: https://www.apache.org/licenses/LICENSE-2.0.html
+#mapping_date: "2025-12-02"
+#mapping_provider: IBM Research
+subject_id	subject_label	predicate_id	object_id	object_label	mapping_justification	author_id	confidence	comment
+ibmcap:ibm-cap-reading-comprehension	Reading Comprehension	skos:relatedMatch	helm:question-answering	Question Answering	semapv:ManualMappingCuration	elizabeth.daly@ie.ibm.com	0.90	QA scenarios evaluate comprehension capability
+ibmcap:ibm-cap-text-generation	Text Generation	skos:relatedMatch	helm:text-generation	Text Generation	semapv:ManualMappingCuration	elizabeth.daly@ie.ibm.com	0.95	HELM text generation scenarios directly assess this capability
+ibmcap:ibm-cap-logical-reasoning	Logical Reasoning	skos:relatedMatch	helm:reasoning	Reasoning	semapv:ManualMappingCuration	elizabeth.daly@ie.ibm.com	0.90	HELM reasoning scenarios evaluate logical inference
+ibmcap:ibm-cap-mathematical-reasoning	Mathematical Reasoning	skos:relatedMatch	helm:gsm8k	GSM8K Math	semapv:ManualMappingCuration	elizabeth.daly@ie.ibm.com	0.95	GSM8K directly evaluates math reasoning capability
+ibmcap:ibm-cap-mathematical-reasoning	Mathematical Reasoning	skos:relatedMatch	helm:math	MATH	semapv:ManualMappingCuration	elizabeth.daly@ie.ibm.com	0.95	MATH benchmark evaluates mathematical problem solving
+ibmcap:ibm-cap-code-generation	Code Generation	skos:relatedMatch	helm:humaneval	HumanEval	semapv:ManualMappingCuration	elizabeth.daly@ie.ibm.com	0.95	HumanEval directly evaluates code generation capability
+ibmcap:ibm-cap-code-generation	Code Generation	skos:relatedMatch	helm:mbpp	MBPP	semapv:ManualMappingCuration	elizabeth.daly@ie.ibm.com	0.95	MBPP (Mostly Basic Python Problems) evaluates code generation
+ibmcap:ibm-cap-factual-accuracy	Factual Accuracy	skos:relatedMatch	helm:truthfulqa	TruthfulQA	semapv:ManualMappingCuration	elizabeth.daly@ie.ibm.com	0.95	TruthfulQA evaluates factual accuracy and truthfulness
