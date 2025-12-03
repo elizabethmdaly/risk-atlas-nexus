@@ -1,0 +1,68 @@
+risks:
+- id: ibm-cap-causal-reasoning
+  exactMatch:
+  - causal-reasoning
+- id: causal-reasoning
+  exactMatch:
+  - ibm-cap-causal-reasoning
+- id: ibm-cap-code-generation
+  relatedMatch:
+  - computer-code
+- id: computer-code
+  relatedMatch:
+  - ibm-cap-code-generation
+- id: ibm-cap-code-understanding
+  relatedMatch:
+  - computer-code
+- id: computer-code
+  relatedMatch:
+  - ibm-cap-code-understanding
+- id: ibm-cap-common-sense-reasoning
+  exactMatch:
+  - common-sense
+- id: common-sense
+  exactMatch:
+  - ibm-cap-common-sense-reasoning
+- id: ibm-cap-contextual-understanding
+  relatedMatch:
+  - contextual-qa
+- id: contextual-qa
+  relatedMatch:
+  - ibm-cap-contextual-understanding
+- id: ibm-cap-domain-knowledge
+  broadMatch:
+  - knowledge-domains
+- id: knowledge-domains
+  narrowMatch:
+  - ibm-cap-domain-knowledge
+- id: ibm-cap-factual-accuracy
+  relatedMatch:
+  - truthfulness
+- id: truthfulness
+  relatedMatch:
+  - ibm-cap-factual-accuracy
+- id: ibm-cap-logical-reasoning
+  exactMatch:
+  - logical-reasoning
+- id: logical-reasoning
+  exactMatch:
+  - ibm-cap-logical-reasoning
+- id: ibm-cap-mathematical-reasoning
+  closeMatch:
+  - mathematics
+- id: mathematics
+  closeMatch:
+  - ibm-cap-mathematical-reasoning
+- id: ibm-cap-reading-comprehension
+  exactMatch:
+  - reading-comprehension
+- id: reading-comprehension
+  exactMatch:
+  - ibm-cap-reading-comprehension
+- id: ibm-cap-text-generation
+  broadMatch:
+  - free-response
+- id: free-response
+  narrowMatch:
+  - ibm-cap-text-generation
+

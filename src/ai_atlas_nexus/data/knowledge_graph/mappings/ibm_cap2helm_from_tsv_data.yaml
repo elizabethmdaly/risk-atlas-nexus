@@ -1,0 +1,50 @@
+risks:
+- id: ibm-cap-code-generation
+  relatedMatch:
+  - humaneval
+- id: humaneval
+  relatedMatch:
+  - ibm-cap-code-generation
+- id: ibm-cap-code-generation
+  relatedMatch:
+  - mbpp
+- id: mbpp
+  relatedMatch:
+  - ibm-cap-code-generation
+- id: ibm-cap-factual-accuracy
+  relatedMatch:
+  - truthfulqa
+- id: truthfulqa
+  relatedMatch:
+  - ibm-cap-factual-accuracy
+- id: ibm-cap-logical-reasoning
+  relatedMatch:
+  - reasoning
+- id: reasoning
+  relatedMatch:
+  - ibm-cap-logical-reasoning
+- id: ibm-cap-mathematical-reasoning
+  relatedMatch:
+  - gsm8k
+- id: gsm8k
+  relatedMatch:
+  - ibm-cap-mathematical-reasoning
+- id: ibm-cap-mathematical-reasoning
+  relatedMatch:
+  - math
+- id: math
+  relatedMatch:
+  - ibm-cap-mathematical-reasoning
+- id: ibm-cap-reading-comprehension
+  relatedMatch:
+  - question-answering
+- id: question-answering
+  relatedMatch:
+  - ibm-cap-reading-comprehension
+- id: ibm-cap-text-generation
+  relatedMatch:
+  - text-generation
+- id: text-generation
+  relatedMatch:
+  - ibm-cap-text-generation
+
