@@ -1,0 +1,118 @@
+id: https://ibm.github.io/ai-atlas-nexus/ontology/ai_usecase
+name: ai_usecase
+description: >-
+  Use case representation for AI systems, enabling comparison of deployment
+  contexts to assess whether certifications and risk evaluations remain valid
+  across different application scenarios. Based on the approach described in
+  Daly, Gajcin, Vejsbjerg, Golpayegani, Nair & Varshney, "Assessing AI
+  Certification Validity via Knowledge Graphs for Use Case Similarity"
+  (NeurIPS 2025 Workshop on Regulatable ML,
+  https://openreview.net/forum?id=sLodKzSa7p). Uses AIRO ontology factors
+  (domain, purpose, AI subjects, locality) extended with links to risks,
+  controls, and policies.
+license: license-apache-2.0
+version: "1.0.0"
+default_curi_maps:
+  - semweb_context
+imports:
+  - linkml:types
+  - common
+  - ai_risk
+  - ai_system
+
+prefixes:
+  linkml: https://w3id.org/linkml/
+  nexus: https://ibm.github.io/ai-atlas-nexus/ontology/
+  airo: https://w3id.org/airo#
+  dpv: https://w3id.org/dpv#
+
+default_range: string
+default_prefix: nexus
+
+classes:
+  UseCase:
+    is_a: Entity
+    class_uri: airo:UseCase
+    description: >-
+      An AI use case representing the application context in which an AI system
+      is deployed. Modeled as a star-shaped personal knowledge graph (PKG) with
+      the use case as the center and contextual factors (domain, purpose,
+      capabilities, AI subjects, locality) as spokes. Comparing two use case
+      KGs reveals whether a change in deployment context (e.g., a locality
+      change from New York to EU) invalidates prior certifications or risk
+      evaluations — even when text descriptions are nearly identical.
+      See Daly, Gajcin, Vejsbjerg, Golpayegani, Nair & Varshney (NeurIPS
+      2025 RegML Workshop) for the motivation and the algorithmic hiring
+      example.
+    slots:
+      - domain
+      - purpose
+      - capability
+      - aiSubject
+      - locality
+      - hasRelatedRisk
+      - hasAiTask
+      - hasRelatedAction
+      - hasStakeholder
+
+slots:
+  domain:
+    slot_uri: airo:domain
+    range: string
+    multivalued: true
+    inlined: false
+    description: >-
+      The domain of application for this use case (e.g., Human Resources,
+      Healthcare, Finance). Multiple domains may apply.
+
+  purpose:
+    slot_uri: airo:purpose
+    range: string
+    description: >-
+      The intended purpose of the AI system in this use case (e.g., making
+      hiring decisions, medical diagnosis, fraud detection).
+
+  capability:
+    slot_uri: airo:capability
+    range: string
+    multivalued: true
+    inlined: false
+    description: >-
+      The AI capabilities employed in this use case (e.g., multimodal analysis,
+      text generation, classification).
+
+  aiSubject:
+    slot_uri: airo:aiSubject
+    range: string
+    multivalued: true
+    inlined: false
+    description: >-
+      The individuals or groups that are subject to the AI system's decisions
+      or outputs (e.g., job applicants, patients, customers).
+
+  locality:
+    slot_uri: airo:locality
+    range: string
+    multivalued: true
+    inlined: false
+    description: >-
+      The geographic locality or jurisdiction in which the AI system is deployed
+      (e.g., EU, New York US, Global). Locality can trigger different regulatory
+      requirements.
+
+  hasAiTask:
+    slot_uri: nexus:hasAiTask
+    range: AiTask
+    multivalued: true
+    inlined: false
+    description: >-
+      The AI tasks performed in this use case, linking to the task taxonomy.
+
+  hasStakeholder:
+    slot_uri: dpv:hasStakeholder
+    range: Stakeholder
+    multivalued: true
+    inlined: false
+    description: >-
+      Stakeholders involved in this use case (e.g., model developer, deployer,
+      AI subjects).
