@@ -15,6 +15,7 @@ imports:
   - ai_intrinsic
   - ai_csiro_rai
   - ai_aiuc
+  - ai_usecase
 
 prefixes:
   linkml: https://w3id.org/linkml/
@@ -201,5 +202,11 @@ classes:
         description: A list of Obligations
         multivalued: true
         range: Obligation
+        inlined: true
+        inlined_as_list: true
+      usecases:
+        description: A list of AI use cases
+        multivalued: true
+        range: UseCase
         inlined: true
         inlined_as_list: true
