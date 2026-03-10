@@ -30,6 +30,7 @@ help: status
 	@echo "make regenerate_owl_schema -- export the schema as OWL"
 	@echo "make regenerate_risk_atlas_as_tex -- export the IBM AI risk atlas as .tex"
 	@echo "make regenerate_cypher_code -- export the graph with all instances to Cypher queries"
+	@echo "make regenerate_graph_as_sigma_js_json -- export the graph with all instances to a Sigma js JSON"
 	@echo "make lint_schema -- schema linter shortcut"
 	@echo ""
 
@@ -41,10 +42,10 @@ regenerate_documentation:
 	gen-doc -d docs/ontology $(SOURCE_SCHEMA_PATH)/${LINKML_SCHEMA_NAME}.yaml
 
 lift_mappings_from_tsv:
-	python ./src/ai_atlas_nexus/ai_risk_ontology/util/lifting/import_risk_mappings.py
+	python ./src/ai_atlas_nexus/ai_risk_ontology/util/lifting/import_entity_mappings.py
 
 compile_pydantic_model:
-	gen-pydantic --meta AUTO $(SOURCE_SCHEMA_PATH)/${LINKML_SCHEMA_NAME}.yaml > ${DATAMODEL_PATH}/ai_risk_ontology.py
+	gen-pydantic --meta auto $(SOURCE_SCHEMA_PATH)/${LINKML_SCHEMA_NAME}.yaml > ${DATAMODEL_PATH}/ai_risk_ontology.py
 
 regenerate_graph_output:
 	python ./src/ai_atlas_nexus/ai_risk_ontology/util/export_graph.py
@@ -57,6 +58,9 @@ regenerate_risk_atlas_as_tex:
 
 regenerate_cypher_code: lift_mappings_from_tsv
 	python ./src/ai_atlas_nexus/ai_risk_ontology/util/export_cypher.py
+
+regenerate_graph_as_sigma_js_json:
+	python ./src/ai_atlas_nexus/ai_risk_ontology/util/export_json_graph.py
 
 lint_schema:
 	linkml-lint $(SOURCE_SCHEMA_PATH)/${LINKML_SCHEMA_NAME}.yaml

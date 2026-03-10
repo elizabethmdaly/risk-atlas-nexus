@@ -1,36 +1,46 @@
-
-
 # Class: LargeLanguageModel
-
 
 _A large language model (LLM) is an AI model which supports a range of language-related tasks such as generation, summarization, classification, among others. A LLM is implemented as an artificial neural networks using a transformer architecture._
 
-
-
-
-
 URI: [nexus:LargeLanguageModel](https://ibm.github.io/ai-atlas-nexus/ontology/LargeLanguageModel)
-
-
-
-
-
 
 ```mermaid
  classDiagram
     class LargeLanguageModel
-    click LargeLanguageModel href "../LargeLanguageModel"
+    click LargeLanguageModel href "../LargeLanguageModel/"
       AiModel <|-- LargeLanguageModel
-        click AiModel href "../AiModel"
+        click AiModel href "../AiModel/"
 
 
       LargeLanguageModel <|-- Adapter
-        click Adapter href "../Adapter"
+        click Adapter href "../Adapter/"
 
 
       LargeLanguageModel : architecture
 
+      LargeLanguageModel : broad_mappings
+
+
+
+
+
+        LargeLanguageModel --> "*" Any : broad_mappings
+        click Any href "../Any/"
+
+
+
       LargeLanguageModel : carbon_emitted
+
+      LargeLanguageModel : close_mappings
+
+
+
+
+
+        LargeLanguageModel --> "*" Any : close_mappings
+        click Any href "../Any/"
+
+
 
       LargeLanguageModel : contextWindowSize
 
@@ -39,6 +49,17 @@ URI: [nexus:LargeLanguageModel](https://ibm.github.io/ai-atlas-nexus/ontology/La
       LargeLanguageModel : dateModified
 
       LargeLanguageModel : description
+
+      LargeLanguageModel : exact_mappings
+
+
+
+
+
+        LargeLanguageModel --> "*" Any : exact_mappings
+        click Any href "../Any/"
+
+
 
       LargeLanguageModel : fine_tuning
 
@@ -51,7 +72,7 @@ URI: [nexus:LargeLanguageModel](https://ibm.github.io/ai-atlas-nexus/ontology/La
 
 
         LargeLanguageModel --> "*" Documentation : hasDocumentation
-        click Documentation href "../Documentation"
+        click Documentation href "../Documentation/"
 
 
 
@@ -62,7 +83,7 @@ URI: [nexus:LargeLanguageModel](https://ibm.github.io/ai-atlas-nexus/ontology/La
 
 
         LargeLanguageModel --> "*" AiEvalResult : hasEvaluation
-        click AiEvalResult href "../AiEvalResult"
+        click AiEvalResult href "../AiEvalResult/"
 
 
 
@@ -73,7 +94,7 @@ URI: [nexus:LargeLanguageModel](https://ibm.github.io/ai-atlas-nexus/ontology/La
 
 
         LargeLanguageModel --> "*" Modality : hasInputModality
-        click Modality href "../Modality"
+        click Modality href "../Modality/"
 
 
 
@@ -84,7 +105,7 @@ URI: [nexus:LargeLanguageModel](https://ibm.github.io/ai-atlas-nexus/ontology/La
 
 
         LargeLanguageModel --> "0..1" License : hasLicense
-        click License href "../License"
+        click License href "../License/"
 
 
 
@@ -97,7 +118,7 @@ URI: [nexus:LargeLanguageModel](https://ibm.github.io/ai-atlas-nexus/ontology/La
 
 
         LargeLanguageModel --> "*" Modality : hasOutputModality
-        click Modality href "../Modality"
+        click Modality href "../Modality/"
 
 
 
@@ -108,7 +129,7 @@ URI: [nexus:LargeLanguageModel](https://ibm.github.io/ai-atlas-nexus/ontology/La
 
 
         LargeLanguageModel --> "*" RiskControl : hasRiskControl
-        click RiskControl href "../RiskControl"
+        click RiskControl href "../RiskControl/"
 
 
 
@@ -119,7 +140,7 @@ URI: [nexus:LargeLanguageModel](https://ibm.github.io/ai-atlas-nexus/ontology/La
 
 
         LargeLanguageModel --> "*" Dataset : hasTrainingData
-        click Dataset href "../Dataset"
+        click Dataset href "../Dataset/"
 
 
 
@@ -132,7 +153,7 @@ URI: [nexus:LargeLanguageModel](https://ibm.github.io/ai-atlas-nexus/ontology/La
 
 
         LargeLanguageModel --> "0..1" LargeLanguageModelFamily : isPartOf
-        click LargeLanguageModelFamily href "../LargeLanguageModelFamily"
+        click LargeLanguageModelFamily href "../LargeLanguageModelFamily/"
 
 
 
@@ -143,11 +164,22 @@ URI: [nexus:LargeLanguageModel](https://ibm.github.io/ai-atlas-nexus/ontology/La
 
 
         LargeLanguageModel --> "0..1" AiProvider : isProvidedBy
-        click AiProvider href "../AiProvider"
+        click AiProvider href "../AiProvider/"
 
 
 
       LargeLanguageModel : name
+
+      LargeLanguageModel : narrow_mappings
+
+
+
+
+
+        LargeLanguageModel --> "*" Any : narrow_mappings
+        click Any href "../Any/"
+
+
 
       LargeLanguageModel : numParameters
 
@@ -160,7 +192,7 @@ URI: [nexus:LargeLanguageModel](https://ibm.github.io/ai-atlas-nexus/ontology/La
 
 
         LargeLanguageModel --> "*" AiTask : performsTask
-        click AiTask href "../AiTask"
+        click AiTask href "../AiTask/"
 
 
 
@@ -173,7 +205,29 @@ URI: [nexus:LargeLanguageModel](https://ibm.github.io/ai-atlas-nexus/ontology/La
 
 
         LargeLanguageModel --> "0..1" Organization : producer
-        click Organization href "../Organization"
+        click Organization href "../Organization/"
+
+
+
+      LargeLanguageModel : related_mappings
+
+
+
+
+
+        LargeLanguageModel --> "*" Any : related_mappings
+        click Any href "../Any/"
+
+
+
+      LargeLanguageModel : requiresCapability
+
+
+
+
+
+        LargeLanguageModel --> "*" Capability : requiresCapability
+        click Capability href "../Capability/"
 
 
 
@@ -184,99 +238,80 @@ URI: [nexus:LargeLanguageModel](https://ibm.github.io/ai-atlas-nexus/ontology/La
 
 ```
 
-
-
-
-
 ## Inheritance
-* [Entity](Entity.md)
-    * [BaseAi](BaseAi.md)
-        * [AiModel](AiModel.md)
-            * **LargeLanguageModel**
 
-
+- [Entity](Entity.md)
+  - [BaseAi](BaseAi.md)
+    - [AiModel](AiModel.md)
+      - **LargeLanguageModel**
 
 ## Slots
 
-| Name | Cardinality and Range | Description | Inheritance |
-| ---  | --- | --- | --- |
-| [numParameters](numParameters.md) | 0..1 <br/> [Integer](Integer.md) | A property indicating the number of parameters in a LLM | direct |
-| [numTrainingTokens](numTrainingTokens.md) | 0..1 <br/> [Integer](Integer.md) | The number of tokens a AI model was trained on | direct |
-| [contextWindowSize](contextWindowSize.md) | 0..1 <br/> [Integer](Integer.md) | The total length, in bytes, of an AI model's context window | direct |
-| [hasInputModality](hasInputModality.md) | * <br/> [Modality](Modality.md) | A relationship indicating the input modalities supported by an AI component | direct |
-| [hasOutputModality](hasOutputModality.md) | * <br/> [Modality](Modality.md) | A relationship indicating the output modalities supported by an AI component | direct |
-| [hasTrainingData](hasTrainingData.md) | * <br/> [Dataset](Dataset.md) | A relationship indicating the datasets an AI model was trained on | direct |
-| [fine_tuning](fine_tuning.md) | 0..1 <br/> [String](String.md) | A description of the fine-tuning mechanism(s) applied to a model | direct |
-| [supported_languages](supported_languages.md) | * <br/> [String](String.md) | A list of languages, expressed as ISO two letter codes | direct |
-| [isPartOf](isPartOf.md) | 0..1 <br/> [LargeLanguageModelFamily](LargeLanguageModelFamily.md) | Annotation that a Large Language model is part of a family of models | direct |
-| [hasEvaluation](hasEvaluation.md) | * <br/> [AiEvalResult](AiEvalResult.md) | A relationship indicating that an entity has an AI evaluation result | [AiModel](AiModel.md) |
-| [architecture](architecture.md) | 0..1 <br/> [String](String.md) | A description of the architecture of an AI such as 'Decoder-only' | [AiModel](AiModel.md) |
-| [gpu_hours](gpu_hours.md) | 0..1 <br/> [Integer](Integer.md) | GPU consumption in terms of hours | [AiModel](AiModel.md) |
-| [power_consumption_w](power_consumption_w.md) | 0..1 <br/> [Integer](Integer.md) | power consumption in Watts | [AiModel](AiModel.md) |
-| [carbon_emitted](carbon_emitted.md) | 0..1 <br/> [Float](Float.md) | The number of tons of carbon dioxide equivalent that are emitted during train... | [AiModel](AiModel.md) |
-| [hasRiskControl](hasRiskControl.md) | * <br/> [RiskControl](RiskControl.md) | Indicates the control measures associated with a system or component to modif... | [AiModel](AiModel.md) |
-| [producer](producer.md) | 0..1 <br/> [Organization](Organization.md) | A relationship to the Organization instance which produces this instance | [BaseAi](BaseAi.md) |
-| [hasModelCard](hasModelCard.md) | * <br/> [String](String.md) | A relationship to model card references | [BaseAi](BaseAi.md) |
-| [hasDocumentation](hasDocumentation.md) | * <br/> [Documentation](Documentation.md) | Indicates documentation associated with an entity | [BaseAi](BaseAi.md) |
-| [hasLicense](hasLicense.md) | 0..1 <br/> [License](License.md) | Indicates licenses associated with a resource | [BaseAi](BaseAi.md) |
-| [performsTask](performsTask.md) | * <br/> [AiTask](AiTask.md) | relationship indicating the AI tasks an AI model can perform | [BaseAi](BaseAi.md) |
-| [isProvidedBy](isProvidedBy.md) | 0..1 <br/> [AiProvider](AiProvider.md) | A relationship indicating the AI model has been provided by an AI model provi... | [BaseAi](BaseAi.md) |
-| [id](id.md) | 1 <br/> [String](String.md) | A unique identifier to this instance of the model element | [Entity](Entity.md) |
-| [name](name.md) | 0..1 <br/> [String](String.md) | A text name of this instance | [Entity](Entity.md) |
-| [description](description.md) | 0..1 <br/> [String](String.md) | The description of an entity | [Entity](Entity.md) |
-| [url](url.md) | 0..1 <br/> [Uri](Uri.md) | An optional URL associated with this instance | [Entity](Entity.md) |
-| [dateCreated](dateCreated.md) | 0..1 <br/> [Date](Date.md) | The date on which the entity was created | [Entity](Entity.md) |
-| [dateModified](dateModified.md) | 0..1 <br/> [Date](Date.md) | The date on which the entity was most recently modified | [Entity](Entity.md) |
+| Name                                          | Cardinality and Range                                              | Description                                                                      | Inheritance           |
+| --------------------------------------------- | ------------------------------------------------------------------ | -------------------------------------------------------------------------------- | --------------------- |
+| [numParameters](numParameters.md)             | 0..1 <br/> [Integer](Integer.md)                                   | A property indicating the number of parameters in a LLM                          | direct                |
+| [numTrainingTokens](numTrainingTokens.md)     | 0..1 <br/> [Integer](Integer.md)                                   | The number of tokens a AI model was trained on                                   | direct                |
+| [contextWindowSize](contextWindowSize.md)     | 0..1 <br/> [Integer](Integer.md)                                   | The total length, in bytes, of an AI model's context window                      | direct                |
+| [hasInputModality](hasInputModality.md)       | \* <br/> [Modality](Modality.md)                                   | A relationship indicating the input modalities supported by an AI component      | direct                |
+| [hasOutputModality](hasOutputModality.md)     | \* <br/> [Modality](Modality.md)                                   | A relationship indicating the output modalities supported by an AI component     | direct                |
+| [hasTrainingData](hasTrainingData.md)         | \* <br/> [Dataset](Dataset.md)                                     | A relationship indicating the datasets an AI model was trained on                | direct                |
+| [fine_tuning](fine_tuning.md)                 | 0..1 <br/> [String](String.md)                                     | A description of the fine-tuning mechanism(s) applied to a model                 | direct                |
+| [supported_languages](supported_languages.md) | \* <br/> [String](String.md)                                       | A list of languages, expressed as ISO two letter codes                           | direct                |
+| [isPartOf](isPartOf.md)                       | 0..1 <br/> [LargeLanguageModelFamily](LargeLanguageModelFamily.md) | Annotation that a Large Language model is part of a family of models             | direct                |
+| [requiresCapability](requiresCapability.md)   | \* <br/> [Capability](Capability.md)                               | Indicates that this entry requires a specific capability                         | direct                |
+| [hasEvaluation](hasEvaluation.md)             | \* <br/> [AiEvalResult](AiEvalResult.md)                           | A relationship indicating that an entity has an AI evaluation result             | [AiModel](AiModel.md) |
+| [architecture](architecture.md)               | 0..1 <br/> [String](String.md)                                     | A description of the architecture of an AI such as 'Decoder-only'                | [AiModel](AiModel.md) |
+| [gpu_hours](gpu_hours.md)                     | 0..1 <br/> [Integer](Integer.md)                                   | GPU consumption in terms of hours                                                | [AiModel](AiModel.md) |
+| [power_consumption_w](power_consumption_w.md) | 0..1 <br/> [Integer](Integer.md)                                   | power consumption in Watts                                                       | [AiModel](AiModel.md) |
+| [carbon_emitted](carbon_emitted.md)           | 0..1 <br/> [Float](Float.md)                                       | The number of tons of carbon dioxide equivalent that are emitted during train... | [AiModel](AiModel.md) |
+| [hasRiskControl](hasRiskControl.md)           | \* <br/> [RiskControl](RiskControl.md)                             | Indicates the control measures associated with a system or component to modif... | [AiModel](AiModel.md) |
+| [producer](producer.md)                       | 0..1 <br/> [Organization](Organization.md)                         | A relationship to the Organization instance which produces this instance         | [BaseAi](BaseAi.md)   |
+| [hasModelCard](hasModelCard.md)               | \* <br/> [String](String.md)                                       | A relationship to model card references                                          | [BaseAi](BaseAi.md)   |
+| [hasDocumentation](hasDocumentation.md)       | \* <br/> [Documentation](Documentation.md)                         | Indicates documentation associated with an entity                                | [BaseAi](BaseAi.md)   |
+| [hasLicense](hasLicense.md)                   | 0..1 <br/> [License](License.md)                                   | Indicates licenses associated with a resource                                    | [BaseAi](BaseAi.md)   |
+| [performsTask](performsTask.md)               | \* <br/> [AiTask](AiTask.md)                                       | relationship indicating the AI tasks an AI model can perform                     | [BaseAi](BaseAi.md)   |
+| [isProvidedBy](isProvidedBy.md)               | 0..1 <br/> [AiProvider](AiProvider.md)                             | A relationship indicating the AI model has been provided by an AI model provi... | [BaseAi](BaseAi.md)   |
+| [id](id.md)                                   | 1 <br/> [String](String.md)                                        | A unique identifier to this instance of the model element                        | [Entity](Entity.md)   |
+| [name](name.md)                               | 0..1 <br/> [String](String.md)                                     | A text name of this instance                                                     | [Entity](Entity.md)   |
+| [description](description.md)                 | 0..1 <br/> [String](String.md)                                     | The description of an entity                                                     | [Entity](Entity.md)   |
+| [url](url.md)                                 | 0..1 <br/> [Uri](Uri.md)                                           | An optional URL associated with this instance                                    | [Entity](Entity.md)   |
+| [dateCreated](dateCreated.md)                 | 0..1 <br/> [Date](Date.md)                                         | The date on which the entity was created                                         | [Entity](Entity.md)   |
+| [dateModified](dateModified.md)               | 0..1 <br/> [Date](Date.md)                                         | The date on which the entity was most recently modified                          | [Entity](Entity.md)   |
+| [exact_mappings](exact_mappings.md)           | \* <br/> [Any](Any.md)                                             | The property is used to link two concepts, indicating a high degree of confid... | [Entity](Entity.md)   |
+| [close_mappings](close_mappings.md)           | \* <br/> [Any](Any.md)                                             | The property is used to link two concepts that are sufficiently similar that ... | [Entity](Entity.md)   |
+| [related_mappings](related_mappings.md)       | \* <br/> [Any](Any.md)                                             | The property skos:relatedMatch is used to state an associative mapping link b... | [Entity](Entity.md)   |
+| [narrow_mappings](narrow_mappings.md)         | \* <br/> [Any](Any.md)                                             | The property is used to state a hierarchical mapping link between two concept... | [Entity](Entity.md)   |
+| [broad_mappings](broad_mappings.md)           | \* <br/> [Any](Any.md)                                             | The property is used to state a hierarchical mapping link between two concept... | [Entity](Entity.md)   |
 
+## Mixin Usage
 
-
-
+| mixed into            | description                                                                      |
+| --------------------- | -------------------------------------------------------------------------------- |
+| [Adapter](Adapter.md) | Adapter-based methods add extra trainable parameters after the attention and ... |
 
 ## Usages
 
-| used by | used in | type | used |
-| ---  | --- | --- | --- |
-| [Container](Container.md) | [aimodels](aimodels.md) | range | [LargeLanguageModel](LargeLanguageModel.md) |
-| [Adapter](Adapter.md) | [adaptsModel](adaptsModel.md) | range | [LargeLanguageModel](LargeLanguageModel.md) |
-
-
-
+| used by                   | used in                       | type  | used                                        |
+| ------------------------- | ----------------------------- | ----- | ------------------------------------------- |
+| [Container](Container.md) | [aimodels](aimodels.md)       | range | [LargeLanguageModel](LargeLanguageModel.md) |
+| [Adapter](Adapter.md)     | [adaptsModel](adaptsModel.md) | range | [LargeLanguageModel](LargeLanguageModel.md) |
 
 ## Aliases
 
-
-* LLM
-
-
+- LLM
 
 ## Identifier and Mapping Information
 
-
-
-
-
-
-
 ### Schema Source
 
-
-* from schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
-
-
-
+- from schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
 
 ## Mappings
 
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | nexus:LargeLanguageModel |
-| native | nexus:LargeLanguageModel |
-
-
-
-
-
-
+| Mapping Type | Mapped Value             |
+| ------------ | ------------------------ |
+| self         | nexus:LargeLanguageModel |
+| native       | nexus:LargeLanguageModel |
 
 ## LinkML Source
 
@@ -295,6 +330,7 @@ from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
 aliases:
 - LLM
 is_a: AiModel
+mixin: true
 slots:
 - numParameters
 - numTrainingTokens
@@ -305,13 +341,14 @@ slots:
 - fine_tuning
 - supported_languages
 - isPartOf
+- requiresCapability
 slot_usage:
   isPartOf:
     name: isPartOf
     description: Annotation that a Large Language model is part of a family of models
     range: LargeLanguageModelFamily
 
-```
+````
 </details>
 
 ### Induced
@@ -327,6 +364,7 @@ from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
 aliases:
 - LLM
 is_a: AiModel
+mixin: true
 slot_usage:
   isPartOf:
     name: isPartOf
@@ -438,10 +476,29 @@ attributes:
     alias: isPartOf
     owner: LargeLanguageModel
     domain_of:
+    - Entry
     - Risk
     - LargeLanguageModel
+    - CapabilityGroup
     - Stakeholder
     range: LargeLanguageModelFamily
+  requiresCapability:
+    name: requiresCapability
+    description: Indicates that this entry requires a specific capability
+    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    rank: 1000
+    domain: Any
+    alias: requiresCapability
+    owner: LargeLanguageModel
+    domain_of:
+    - Entry
+    - LargeLanguageModel
+    - AiTask
+    - Adapter
+    inverse: requiredByTask
+    range: Capability
+    multivalued: true
+    inlined: false
   hasEvaluation:
     name: hasEvaluation
     description: A relationship indicating that an entity has an AI evaluation result.
@@ -548,6 +605,10 @@ attributes:
     domain_of:
     - Dataset
     - Vocabulary
+    - Taxonomy
+    - Concept
+    - Group
+    - Entry
     - Term
     - Principle
     - RiskTaxonomy
@@ -573,6 +634,7 @@ attributes:
     - Dataset
     - Documentation
     - Vocabulary
+    - Taxonomy
     - RiskTaxonomy
     - BaseAi
     - AiEval
@@ -675,6 +737,80 @@ attributes:
     - Entity
     range: date
     required: false
+  exact_mappings:
+    name: exact_mappings
+    description: The property is used to link two concepts, indicating a high degree
+      of confidence that the concepts can be used interchangeably across a wide range
+      of information retrieval applications
+    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    rank: 1000
+    slot_uri: skos:exactMatch
+    alias: exact_mappings
+    owner: LargeLanguageModel
+    domain_of:
+    - Entity
+    range: Any
+    multivalued: true
+    inlined: false
+  close_mappings:
+    name: close_mappings
+    description: The property is used to link two concepts that are sufficiently similar
+      that they can be used interchangeably in some information retrieval applications.
+    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    rank: 1000
+    slot_uri: skos:closeMatch
+    alias: close_mappings
+    owner: LargeLanguageModel
+    domain_of:
+    - Entity
+    range: Any
+    multivalued: true
+    inlined: false
+  related_mappings:
+    name: related_mappings
+    description: The property skos:relatedMatch is used to state an associative mapping
+      link between two concepts.
+    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    rank: 1000
+    slot_uri: skos:relatedMatch
+    alias: related_mappings
+    owner: LargeLanguageModel
+    domain_of:
+    - Entity
+    range: Any
+    multivalued: true
+    inlined: false
+  narrow_mappings:
+    name: narrow_mappings
+    description: The property is used to state a hierarchical mapping link between
+      two concepts, indicating that the concept linked to, is a narrower concept than
+      the originating concept.
+    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    rank: 1000
+    slot_uri: skos:narrowMatch
+    alias: narrow_mappings
+    owner: LargeLanguageModel
+    domain_of:
+    - Entity
+    range: Any
+    multivalued: true
+    inlined: false
+  broad_mappings:
+    name: broad_mappings
+    description: The property is used to state a hierarchical mapping link between
+      two concepts, indicating that the concept linked to, is a broader concept than
+      the originating concept.
+    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    rank: 1000
+    slot_uri: skos:broadMatch
+    alias: broad_mappings
+    owner: LargeLanguageModel
+    domain_of:
+    - Entity
+    range: Any
+    multivalued: true
+    inlined: false
 
-```
+````
+
 </details>

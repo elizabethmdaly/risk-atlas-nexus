@@ -1,25 +1,13 @@
-
-
 # Class: Container
-
 
 _An umbrella object that holds the ontology class instances_
 
-
-
-
-
 URI: [nexus:Container](https://ibm.github.io/ai-atlas-nexus/ontology/Container)
-
-
-
-
-
 
 ```mermaid
  classDiagram
     class Container
-    click Container href "../Container"
+    click Container href "../Container/"
       Container : actions
 
 
@@ -27,7 +15,7 @@ URI: [nexus:Container](https://ibm.github.io/ai-atlas-nexus/ontology/Container)
 
 
         Container --> "*" Action : actions
-        click Action href "../Action"
+        click Action href "../Action/"
 
 
 
@@ -38,7 +26,7 @@ URI: [nexus:Container](https://ibm.github.io/ai-atlas-nexus/ontology/Container)
 
 
         Container --> "*" Adapter : adapters
-        click Adapter href "../Adapter"
+        click Adapter href "../Adapter/"
 
 
 
@@ -49,7 +37,7 @@ URI: [nexus:Container](https://ibm.github.io/ai-atlas-nexus/ontology/Container)
 
 
         Container --> "*" AiEvalResult : aievalresults
-        click AiEvalResult href "../AiEvalResult"
+        click AiEvalResult href "../AiEvalResult/"
 
 
 
@@ -60,7 +48,7 @@ URI: [nexus:Container](https://ibm.github.io/ai-atlas-nexus/ontology/Container)
 
 
         Container --> "*" LargeLanguageModelFamily : aimodelfamilies
-        click LargeLanguageModelFamily href "../LargeLanguageModelFamily"
+        click LargeLanguageModelFamily href "../LargeLanguageModelFamily/"
 
 
 
@@ -71,7 +59,7 @@ URI: [nexus:Container](https://ibm.github.io/ai-atlas-nexus/ontology/Container)
 
 
         Container --> "*" LargeLanguageModel : aimodels
-        click LargeLanguageModel href "../LargeLanguageModel"
+        click LargeLanguageModel href "../LargeLanguageModel/"
 
 
 
@@ -82,7 +70,7 @@ URI: [nexus:Container](https://ibm.github.io/ai-atlas-nexus/ontology/Container)
 
 
         Container --> "*" AiTask : aitasks
-        click AiTask href "../AiTask"
+        click AiTask href "../AiTask/"
 
 
 
@@ -93,7 +81,29 @@ URI: [nexus:Container](https://ibm.github.io/ai-atlas-nexus/ontology/Container)
 
 
         Container --> "*" BenchmarkMetadataCard : benchmarkmetadatacards
-        click BenchmarkMetadataCard href "../BenchmarkMetadataCard"
+        click BenchmarkMetadataCard href "../BenchmarkMetadataCard/"
+
+
+
+      Container : concepts
+
+
+
+
+
+        Container --> "*" Concept : concepts
+        click Concept href "../Concept/"
+
+
+
+      Container : controls
+
+
+
+
+
+        Container --> "*" Control : controls
+        click Control href "../Control/"
 
 
 
@@ -104,7 +114,7 @@ URI: [nexus:Container](https://ibm.github.io/ai-atlas-nexus/ontology/Container)
 
 
         Container --> "*" Dataset : datasets
-        click Dataset href "../Dataset"
+        click Dataset href "../Dataset/"
 
 
 
@@ -115,7 +125,18 @@ URI: [nexus:Container](https://ibm.github.io/ai-atlas-nexus/ontology/Container)
 
 
         Container --> "*" Documentation : documents
-        click Documentation href "../Documentation"
+        click Documentation href "../Documentation/"
+
+
+
+      Container : entries
+
+
+
+
+
+        Container --> "*" Entry : entries
+        click Entry href "../Entry/"
 
 
 
@@ -126,7 +147,18 @@ URI: [nexus:Container](https://ibm.github.io/ai-atlas-nexus/ontology/Container)
 
 
         Container --> "*" AiEval : evaluations
-        click AiEval href "../AiEval"
+        click AiEval href "../AiEval/"
+
+
+
+      Container : groups
+
+
+
+
+
+        Container --> "*" Group : groups
+        click Group href "../Group/"
 
 
 
@@ -137,7 +169,7 @@ URI: [nexus:Container](https://ibm.github.io/ai-atlas-nexus/ontology/Container)
 
 
         Container --> "*" License : licenses
-        click License href "../License"
+        click License href "../License/"
 
 
 
@@ -148,18 +180,7 @@ URI: [nexus:Container](https://ibm.github.io/ai-atlas-nexus/ontology/Container)
 
 
         Container --> "*" LLMIntrinsic : llmintrinsics
-        click LLMIntrinsic href "../LLMIntrinsic"
-
-
-
-      Container : llmquestionpolicies
-
-
-
-
-
-        Container --> "*" LLMQuestionPolicy : llmquestionpolicies
-        click LLMQuestionPolicy href "../LLMQuestionPolicy"
+        click LLMIntrinsic href "../LLMIntrinsic/"
 
 
 
@@ -170,7 +191,7 @@ URI: [nexus:Container](https://ibm.github.io/ai-atlas-nexus/ontology/Container)
 
 
         Container --> "*" Modality : modalities
-        click Modality href "../Modality"
+        click Modality href "../Modality/"
 
 
 
@@ -181,7 +202,7 @@ URI: [nexus:Container](https://ibm.github.io/ai-atlas-nexus/ontology/Container)
 
 
         Container --> "*" Obligation : obligations
-        click Obligation href "../Obligation"
+        click Obligation href "../Obligation/"
 
 
 
@@ -192,7 +213,7 @@ URI: [nexus:Container](https://ibm.github.io/ai-atlas-nexus/ontology/Container)
 
 
         Container --> "*" Organization : organizations
-        click Organization href "../Organization"
+        click Organization href "../Organization/"
 
 
 
@@ -203,7 +224,7 @@ URI: [nexus:Container](https://ibm.github.io/ai-atlas-nexus/ontology/Container)
 
 
         Container --> "*" Permission : permissions
-        click Permission href "../Permission"
+        click Permission href "../Permission/"
 
 
 
@@ -214,18 +235,7 @@ URI: [nexus:Container](https://ibm.github.io/ai-atlas-nexus/ontology/Container)
 
 
         Container --> "*" Policy : policies
-        click Policy href "../Policy"
-
-
-
-      Container : principles
-
-
-
-
-
-        Container --> "*" Principle : principles
-        click Principle href "../Principle"
+        click Policy href "../Policy/"
 
 
 
@@ -236,29 +246,7 @@ URI: [nexus:Container](https://ibm.github.io/ai-atlas-nexus/ontology/Container)
 
 
         Container --> "*" Prohibition : prohibitions
-        click Prohibition href "../Prohibition"
-
-
-
-      Container : riskcontrols
-
-
-
-
-
-        Container --> "*" RiskControl : riskcontrols
-        click RiskControl href "../RiskControl"
-
-
-
-      Container : riskgroups
-
-
-
-
-
-        Container --> "*" RiskGroup : riskgroups
-        click RiskGroup href "../RiskGroup"
+        click Prohibition href "../Prohibition/"
 
 
 
@@ -269,18 +257,7 @@ URI: [nexus:Container](https://ibm.github.io/ai-atlas-nexus/ontology/Container)
 
 
         Container --> "*" RiskIncident : riskincidents
-        click RiskIncident href "../RiskIncident"
-
-
-
-      Container : risks
-
-
-
-
-
-        Container --> "*" Risk : risks
-        click Risk href "../Risk"
+        click RiskIncident href "../RiskIncident/"
 
 
 
@@ -291,7 +268,7 @@ URI: [nexus:Container](https://ibm.github.io/ai-atlas-nexus/ontology/Container)
 
 
         Container --> "*" Rule : rules
-        click Rule href "../Rule"
+        click Rule href "../Rule/"
 
 
 
@@ -302,7 +279,7 @@ URI: [nexus:Container](https://ibm.github.io/ai-atlas-nexus/ontology/Container)
 
 
         Container --> "*" StakeholderGroup : stakeholdergroups
-        click StakeholderGroup href "../StakeholderGroup"
+        click StakeholderGroup href "../StakeholderGroup/"
 
 
 
@@ -313,7 +290,7 @@ URI: [nexus:Container](https://ibm.github.io/ai-atlas-nexus/ontology/Container)
 
 
         Container --> "*" Stakeholder : stakeholders
-        click Stakeholder href "../Stakeholder"
+        click Stakeholder href "../Stakeholder/"
 
 
 
@@ -323,19 +300,8 @@ URI: [nexus:Container](https://ibm.github.io/ai-atlas-nexus/ontology/Container)
 
 
 
-        Container --> "*" RiskTaxonomy : taxonomies
-        click RiskTaxonomy href "../RiskTaxonomy"
-
-
-
-      Container : terms
-
-
-
-
-
-        Container --> "*" Term : terms
-        click Term href "../Term"
+        Container --> "*" Taxonomy : taxonomies
+        click Taxonomy href "../Taxonomy/"
 
 
 
@@ -346,90 +312,60 @@ URI: [nexus:Container](https://ibm.github.io/ai-atlas-nexus/ontology/Container)
 
 
         Container --> "*" Vocabulary : vocabularies
-        click Vocabulary href "../Vocabulary"
+        click Vocabulary href "../Vocabulary/"
 
 
 
 
 ```
 
-
-
-
 <!-- no inheritance hierarchy -->
-
 
 ## Slots
 
-| Name | Cardinality and Range | Description | Inheritance |
-| ---  | --- | --- | --- |
-| [organizations](organizations.md) | * <br/> [Organization](Organization.md) | A list of organizations | direct |
-| [licenses](licenses.md) | * <br/> [License](License.md) | A list of licenses | direct |
-| [modalities](modalities.md) | * <br/> [Modality](Modality.md) | A list of AI modalities | direct |
-| [aitasks](aitasks.md) | * <br/> [AiTask](AiTask.md) | A list of AI tasks | direct |
-| [documents](documents.md) | * <br/> [Documentation](Documentation.md) | A list of documents | direct |
-| [datasets](datasets.md) | * <br/> [Dataset](Dataset.md) | A list of data sets | direct |
-| [llmintrinsics](llmintrinsics.md) | * <br/> [LLMIntrinsic](LLMIntrinsic.md) | A list of LLMIntrinsics | direct |
-| [adapters](adapters.md) | * <br/> [Adapter](Adapter.md) | A list of Adapters | direct |
-| [taxonomies](taxonomies.md) | * <br/> [RiskTaxonomy](RiskTaxonomy.md) | A list of AI risk taxonomies | direct |
-| [vocabularies](vocabularies.md) | * <br/> [Vocabulary](Vocabulary.md) | A list of vocabularies | direct |
-| [riskgroups](riskgroups.md) | * <br/> [RiskGroup](RiskGroup.md) | A list of AI risk groups | direct |
-| [risks](risks.md) | * <br/> [Risk](Risk.md) | A list of AI risks | direct |
-| [riskcontrols](riskcontrols.md) | * <br/> [RiskControl](RiskControl.md) | A list of AI risk controls | direct |
-| [riskincidents](riskincidents.md) | * <br/> [RiskIncident](RiskIncident.md) | A list of AI risk incidents | direct |
-| [terms](terms.md) | * <br/> [Term](Term.md) | A list of terms from a vocabulary | direct |
-| [stakeholdergroups](stakeholdergroups.md) | * <br/> [StakeholderGroup](StakeholderGroup.md) | A list of AI stakeholder groups | direct |
-| [stakeholders](stakeholders.md) | * <br/> [Stakeholder](Stakeholder.md) | A list of stakeholders | direct |
-| [actions](actions.md) | * <br/> [Action](Action.md) | A list of risk related actions | direct |
-| [evaluations](evaluations.md) | * <br/> [AiEval](AiEval.md) | A list of AI evaluation methods | direct |
-| [aievalresults](aievalresults.md) | * <br/> [AiEvalResult](AiEvalResult.md) | A list of AI evaluation results | direct |
-| [benchmarkmetadatacards](benchmarkmetadatacards.md) | * <br/> [BenchmarkMetadataCard](BenchmarkMetadataCard.md) | A list of AI evaluation benchmark metadata cards | direct |
-| [aimodelfamilies](aimodelfamilies.md) | * <br/> [LargeLanguageModelFamily](LargeLanguageModelFamily.md) | A list of AI model families | direct |
-| [aimodels](aimodels.md) | * <br/> [LargeLanguageModel](LargeLanguageModel.md) | A list of AI models | direct |
-| [policies](policies.md) | * <br/> [Policy](Policy.md) | A list of policies | direct |
-| [llmquestionpolicies](llmquestionpolicies.md) | * <br/> [LLMQuestionPolicy](LLMQuestionPolicy.md) | A list of LLM question policies | direct |
-| [rules](rules.md) | * <br/> [Rule](Rule.md) | A list of rules | direct |
-| [prohibitions](prohibitions.md) | * <br/> [Prohibition](Prohibition.md) | A list of prohibitions | direct |
-| [permissions](permissions.md) | * <br/> [Permission](Permission.md) | A list of Permissions | direct |
-| [obligations](obligations.md) | * <br/> [Obligation](Obligation.md) | A list of Obligations | direct |
-| [principles](principles.md) | * <br/> [Principle](Principle.md) | A list of Principles | direct |
-
-
-
-
-
-
-
-
+| Name                                                | Cardinality and Range                                            | Description                                      | Inheritance |
+| --------------------------------------------------- | ---------------------------------------------------------------- | ------------------------------------------------ | ----------- |
+| [organizations](organizations.md)                   | \* <br/> [Organization](Organization.md)                         | A list of organizations                          | direct      |
+| [licenses](licenses.md)                             | \* <br/> [License](License.md)                                   | A list of licenses                               | direct      |
+| [modalities](modalities.md)                         | \* <br/> [Modality](Modality.md)                                 | A list of AI modalities                          | direct      |
+| [aitasks](aitasks.md)                               | \* <br/> [AiTask](AiTask.md)                                     | A list of AI tasks                               | direct      |
+| [documents](documents.md)                           | \* <br/> [Documentation](Documentation.md)                       | A list of documents                              | direct      |
+| [datasets](datasets.md)                             | \* <br/> [Dataset](Dataset.md)                                   | A list of data sets                              | direct      |
+| [llmintrinsics](llmintrinsics.md)                   | \* <br/> [LLMIntrinsic](LLMIntrinsic.md)                         | A list of LLMIntrinsics                          | direct      |
+| [adapters](adapters.md)                             | \* <br/> [Adapter](Adapter.md)                                   | A list of Adapters                               | direct      |
+| [taxonomies](taxonomies.md)                         | \* <br/> [Taxonomy](Taxonomy.md)                                 | A list of taxonomies                             | direct      |
+| [concepts](concepts.md)                             | \* <br/> [Concept](Concept.md)                                   | A list of concepts                               | direct      |
+| [entries](entries.md)                               | \* <br/> [Entry](Entry.md)                                       | A list of entries                                | direct      |
+| [groups](groups.md)                                 | \* <br/> [Group](Group.md)                                       | A list of groups                                 | direct      |
+| [vocabularies](vocabularies.md)                     | \* <br/> [Vocabulary](Vocabulary.md)                             | A list of vocabularies                           | direct      |
+| [controls](controls.md)                             | \* <br/> [Control](Control.md)                                   | A list of AI controls                            | direct      |
+| [riskincidents](riskincidents.md)                   | \* <br/> [RiskIncident](RiskIncident.md)                         | A list of AI risk incidents                      | direct      |
+| [stakeholdergroups](stakeholdergroups.md)           | \* <br/> [StakeholderGroup](StakeholderGroup.md)                 | A list of AI stakeholder groups                  | direct      |
+| [stakeholders](stakeholders.md)                     | \* <br/> [Stakeholder](Stakeholder.md)                           | A list of stakeholders                           | direct      |
+| [actions](actions.md)                               | \* <br/> [Action](Action.md)                                     | A list of risk related actions                   | direct      |
+| [evaluations](evaluations.md)                       | \* <br/> [AiEval](AiEval.md)                                     | A list of AI evaluation methods                  | direct      |
+| [aievalresults](aievalresults.md)                   | \* <br/> [AiEvalResult](AiEvalResult.md)                         | A list of AI evaluation results                  | direct      |
+| [benchmarkmetadatacards](benchmarkmetadatacards.md) | \* <br/> [BenchmarkMetadataCard](BenchmarkMetadataCard.md)       | A list of AI evaluation benchmark metadata cards | direct      |
+| [aimodelfamilies](aimodelfamilies.md)               | \* <br/> [LargeLanguageModelFamily](LargeLanguageModelFamily.md) | A list of AI model families                      | direct      |
+| [aimodels](aimodels.md)                             | \* <br/> [LargeLanguageModel](LargeLanguageModel.md)             | A list of AI models                              | direct      |
+| [policies](policies.md)                             | \* <br/> [Policy](Policy.md)                                     | A list of policies                               | direct      |
+| [rules](rules.md)                                   | \* <br/> [Rule](Rule.md)                                         | A list of rules                                  | direct      |
+| [prohibitions](prohibitions.md)                     | \* <br/> [Prohibition](Prohibition.md)                           | A list of prohibitions                           | direct      |
+| [permissions](permissions.md)                       | \* <br/> [Permission](Permission.md)                             | A list of Permissions                            | direct      |
+| [obligations](obligations.md)                       | \* <br/> [Obligation](Obligation.md)                             | A list of Obligations                            | direct      |
 
 ## Identifier and Mapping Information
 
-
-
-
-
-
-
 ### Schema Source
 
-
-* from schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
-
-
-
+- from schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
 
 ## Mappings
 
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | nexus:Container |
-| native | nexus:Container |
-
-
-
-
-
-
+| Mapping Type | Mapped Value    |
+| ------------ | --------------- |
+| self         | nexus:Container |
+| native       | nexus:Container |
 
 ## LinkML Source
 
@@ -533,12 +469,45 @@ attributes:
     inlined_as_list: true
   taxonomies:
     name: taxonomies
-    description: A list of AI risk taxonomies
+    description: A list of taxonomies
     from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
     rank: 1000
     domain_of:
     - Container
-    range: RiskTaxonomy
+    range: Taxonomy
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
+  concepts:
+    name: concepts
+    description: A list of concepts
+    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    rank: 1000
+    domain_of:
+    - Container
+    range: Concept
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
+  entries:
+    name: entries
+    description: A list of entries
+    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    rank: 1000
+    domain_of:
+    - Container
+    range: Entry
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
+  groups:
+    name: groups
+    description: A list of groups
+    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    rank: 1000
+    domain_of:
+    - Container
+    range: Group
     multivalued: true
     inlined: true
     inlined_as_list: true
@@ -553,36 +522,14 @@ attributes:
     multivalued: true
     inlined: true
     inlined_as_list: true
-  riskgroups:
-    name: riskgroups
-    description: A list of AI risk groups
+  controls:
+    name: controls
+    description: A list of AI controls
     from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
     rank: 1000
     domain_of:
     - Container
-    range: RiskGroup
-    multivalued: true
-    inlined: true
-    inlined_as_list: true
-  risks:
-    name: risks
-    description: A list of AI risks
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
-    rank: 1000
-    domain_of:
-    - Container
-    range: Risk
-    multivalued: true
-    inlined: true
-    inlined_as_list: true
-  riskcontrols:
-    name: riskcontrols
-    description: A list of AI risk controls
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
-    rank: 1000
-    domain_of:
-    - Container
-    range: RiskControl
+    range: Control
     multivalued: true
     inlined: true
     inlined_as_list: true
@@ -594,17 +541,6 @@ attributes:
     domain_of:
     - Container
     range: RiskIncident
-    multivalued: true
-    inlined: true
-    inlined_as_list: true
-  terms:
-    name: terms
-    description: A list of terms from a vocabulary
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
-    rank: 1000
-    domain_of:
-    - Container
-    range: Term
     multivalued: true
     inlined: true
     inlined_as_list: true
@@ -707,17 +643,6 @@ attributes:
     multivalued: true
     inlined: true
     inlined_as_list: true
-  llmquestionpolicies:
-    name: llmquestionpolicies
-    description: A list of LLM question policies
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
-    rank: 1000
-    domain_of:
-    - Container
-    range: LLMQuestionPolicy
-    multivalued: true
-    inlined: true
-    inlined_as_list: true
   rules:
     name: rules
     description: A list of rules
@@ -762,20 +687,9 @@ attributes:
     multivalued: true
     inlined: true
     inlined_as_list: true
-  principles:
-    name: principles
-    description: A list of Principles
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
-    rank: 1000
-    domain_of:
-    - Container
-    range: Principle
-    multivalued: true
-    inlined: true
-    inlined_as_list: true
 tree_root: true
 
-```
+````
 </details>
 
 ### Induced
@@ -892,14 +806,53 @@ attributes:
     inlined_as_list: true
   taxonomies:
     name: taxonomies
-    description: A list of AI risk taxonomies
+    description: A list of taxonomies
     from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
     rank: 1000
     alias: taxonomies
     owner: Container
     domain_of:
     - Container
-    range: RiskTaxonomy
+    range: Taxonomy
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
+  concepts:
+    name: concepts
+    description: A list of concepts
+    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    rank: 1000
+    alias: concepts
+    owner: Container
+    domain_of:
+    - Container
+    range: Concept
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
+  entries:
+    name: entries
+    description: A list of entries
+    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    rank: 1000
+    alias: entries
+    owner: Container
+    domain_of:
+    - Container
+    range: Entry
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
+  groups:
+    name: groups
+    description: A list of groups
+    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    rank: 1000
+    alias: groups
+    owner: Container
+    domain_of:
+    - Container
+    range: Group
     multivalued: true
     inlined: true
     inlined_as_list: true
@@ -916,42 +869,16 @@ attributes:
     multivalued: true
     inlined: true
     inlined_as_list: true
-  riskgroups:
-    name: riskgroups
-    description: A list of AI risk groups
+  controls:
+    name: controls
+    description: A list of AI controls
     from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
     rank: 1000
-    alias: riskgroups
+    alias: controls
     owner: Container
     domain_of:
     - Container
-    range: RiskGroup
-    multivalued: true
-    inlined: true
-    inlined_as_list: true
-  risks:
-    name: risks
-    description: A list of AI risks
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
-    rank: 1000
-    alias: risks
-    owner: Container
-    domain_of:
-    - Container
-    range: Risk
-    multivalued: true
-    inlined: true
-    inlined_as_list: true
-  riskcontrols:
-    name: riskcontrols
-    description: A list of AI risk controls
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
-    rank: 1000
-    alias: riskcontrols
-    owner: Container
-    domain_of:
-    - Container
-    range: RiskControl
+    range: Control
     multivalued: true
     inlined: true
     inlined_as_list: true
@@ -965,19 +892,6 @@ attributes:
     domain_of:
     - Container
     range: RiskIncident
-    multivalued: true
-    inlined: true
-    inlined_as_list: true
-  terms:
-    name: terms
-    description: A list of terms from a vocabulary
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
-    rank: 1000
-    alias: terms
-    owner: Container
-    domain_of:
-    - Container
-    range: Term
     multivalued: true
     inlined: true
     inlined_as_list: true
@@ -1098,19 +1012,6 @@ attributes:
     multivalued: true
     inlined: true
     inlined_as_list: true
-  llmquestionpolicies:
-    name: llmquestionpolicies
-    description: A list of LLM question policies
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
-    rank: 1000
-    alias: llmquestionpolicies
-    owner: Container
-    domain_of:
-    - Container
-    range: LLMQuestionPolicy
-    multivalued: true
-    inlined: true
-    inlined_as_list: true
   rules:
     name: rules
     description: A list of rules
@@ -1163,20 +1064,8 @@ attributes:
     multivalued: true
     inlined: true
     inlined_as_list: true
-  principles:
-    name: principles
-    description: A list of Principles
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
-    rank: 1000
-    alias: principles
-    owner: Container
-    domain_of:
-    - Container
-    range: Principle
-    multivalued: true
-    inlined: true
-    inlined_as_list: true
 tree_root: true
 
-```
+````
+
 </details>

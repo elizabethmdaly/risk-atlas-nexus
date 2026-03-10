@@ -108,6 +108,10 @@ class OllamaInferenceEngineParams(TypedDict):
     penalize_newline: Optional[bool] = None
     stop: Optional[List[str]] = None
 
+    # enable log probs
+    logprobs: Optional[bool] = None
+    top_logprobs: Optional[int] = None
+
 
 class VLLMInferenceEngineParams(TypedDict):
 

@@ -1,24 +1,37 @@
-
-
 # Class: Impact
 
-
-
 URI: [dpv:Impact](https://w3id.org/dpv#Impact)
-
-
-
-
-
 
 ```mermaid
  classDiagram
     class Impact
-    click Impact href "../Impact"
+    click Impact href "../Impact/"
       RiskConcept <|-- Impact
-        click RiskConcept href "../RiskConcept"
+        click RiskConcept href "../RiskConcept/"
       Entity <|-- Impact
-        click Entity href "../Entity"
+        click Entity href "../Entity/"
+
+      Impact : broad_mappings
+
+
+
+
+
+        Impact --> "*" Any : broad_mappings
+        click Any href "../Any/"
+
+
+
+      Impact : close_mappings
+
+
+
+
+
+        Impact --> "*" Any : close_mappings
+        click Any href "../Any/"
+
+
 
       Impact : dateCreated
 
@@ -26,7 +39,40 @@ URI: [dpv:Impact](https://w3id.org/dpv#Impact)
 
       Impact : description
 
+      Impact : exact_mappings
+
+
+
+
+
+        Impact --> "*" Any : exact_mappings
+        click Any href "../Any/"
+
+
+
+      Impact : hasDocumentation
+
+
+
+
+
+        Impact --> "*" Documentation : hasDocumentation
+        click Documentation href "../Documentation/"
+
+
+
       Impact : id
+
+      Impact : isDefinedByTaxonomy
+
+
+
+
+
+        Impact --> "0..1" Taxonomy : isDefinedByTaxonomy
+        click Taxonomy href "../Taxonomy/"
+
+
 
       Impact : isDetectedBy
 
@@ -35,83 +81,85 @@ URI: [dpv:Impact](https://w3id.org/dpv#Impact)
 
 
         Impact --> "*" RiskControl : isDetectedBy
-        click RiskControl href "../RiskControl"
+        click RiskControl href "../RiskControl/"
 
 
 
       Impact : name
+
+      Impact : narrow_mappings
+
+
+
+
+
+        Impact --> "*" Any : narrow_mappings
+        click Any href "../Any/"
+
+
+
+      Impact : related_mappings
+
+
+
+
+
+        Impact --> "*" Any : related_mappings
+        click Any href "../Any/"
+
+
+
+      Impact : type
 
       Impact : url
 
 
 ```
 
-
-
-
-
 ## Inheritance
-* [Entity](Entity.md)
-    * **Impact** [ [RiskConcept](RiskConcept.md)]
 
-
+- [Entity](Entity.md)
+  - **Impact** [ [RiskConcept](RiskConcept.md)]
 
 ## Slots
 
-| Name | Cardinality and Range | Description | Inheritance |
-| ---  | --- | --- | --- |
-| [isDetectedBy](isDetectedBy.md) | * <br/> [RiskControl](RiskControl.md) | A relationship where a risk, risk source, consequence, or impact is detected ... | [RiskConcept](RiskConcept.md) |
-| [id](id.md) | 1 <br/> [String](String.md) | A unique identifier to this instance of the model element | [Entity](Entity.md) |
-| [name](name.md) | 0..1 <br/> [String](String.md) | A text name of this instance | [Entity](Entity.md) |
-| [description](description.md) | 0..1 <br/> [String](String.md) | The description of an entity | [Entity](Entity.md) |
-| [url](url.md) | 0..1 <br/> [Uri](Uri.md) | An optional URL associated with this instance | [Entity](Entity.md) |
-| [dateCreated](dateCreated.md) | 0..1 <br/> [Date](Date.md) | The date on which the entity was created | [Entity](Entity.md) |
-| [dateModified](dateModified.md) | 0..1 <br/> [Date](Date.md) | The date on which the entity was most recently modified | [Entity](Entity.md) |
-
-
-
-
+| Name                                          | Cardinality and Range                      | Description                                                                      | Inheritance                   |
+| --------------------------------------------- | ------------------------------------------ | -------------------------------------------------------------------------------- | ----------------------------- |
+| [isDetectedBy](isDetectedBy.md)               | \* <br/> [RiskControl](RiskControl.md)     | A relationship where a risk, risk source, consequence, or impact is detected ... | [RiskConcept](RiskConcept.md) |
+| [id](id.md)                                   | 1 <br/> [String](String.md)                | A unique identifier to this instance of the model element                        | [Entity](Entity.md)           |
+| [name](name.md)                               | 0..1 <br/> [String](String.md)             | A text name of this instance                                                     | [Entity](Entity.md)           |
+| [description](description.md)                 | 0..1 <br/> [String](String.md)             | The description of an entity                                                     | [Entity](Entity.md)           |
+| [url](url.md)                                 | 0..1 <br/> [Uri](Uri.md)                   | An optional URL associated with this instance                                    | [Entity](Entity.md)           |
+| [dateCreated](dateCreated.md)                 | 0..1 <br/> [Date](Date.md)                 | The date on which the entity was created                                         | [Entity](Entity.md)           |
+| [dateModified](dateModified.md)               | 0..1 <br/> [Date](Date.md)                 | The date on which the entity was most recently modified                          | [Entity](Entity.md)           |
+| [exact_mappings](exact_mappings.md)           | \* <br/> [Any](Any.md)                     | The property is used to link two concepts, indicating a high degree of confid... | [Entity](Entity.md)           |
+| [close_mappings](close_mappings.md)           | \* <br/> [Any](Any.md)                     | The property is used to link two concepts that are sufficiently similar that ... | [Entity](Entity.md)           |
+| [related_mappings](related_mappings.md)       | \* <br/> [Any](Any.md)                     | The property skos:relatedMatch is used to state an associative mapping link b... | [Entity](Entity.md)           |
+| [narrow_mappings](narrow_mappings.md)         | \* <br/> [Any](Any.md)                     | The property is used to state a hierarchical mapping link between two concept... | [Entity](Entity.md)           |
+| [broad_mappings](broad_mappings.md)           | \* <br/> [Any](Any.md)                     | The property is used to state a hierarchical mapping link between two concept... | [Entity](Entity.md)           |
+| [isDefinedByTaxonomy](isDefinedByTaxonomy.md) | 0..1 <br/> [Taxonomy](Taxonomy.md)         | A relationship where a concept or a concept group is defined by a taxonomy       | [Concept](Concept.md)         |
+| [hasDocumentation](hasDocumentation.md)       | \* <br/> [Documentation](Documentation.md) | Indicates documentation associated with an entity                                | [Concept](Concept.md)         |
+| [type](type.md)                               | 0..1 <br/> [String](String.md)             |                                                                                  | [Concept](Concept.md)         |
 
 ## Usages
 
-| used by | used in | type | used |
-| ---  | --- | --- | --- |
+| used by                         | used in                       | type  | used                |
+| ------------------------------- | ----------------------------- | ----- | ------------------- |
 | [RiskIncident](RiskIncident.md) | [hasImpactOn](hasImpactOn.md) | range | [Impact](Impact.md) |
-| [RiskIncident](RiskIncident.md) | [hasImpact](hasImpact.md) | range | [Impact](Impact.md) |
-
-
-
-
-
+| [RiskIncident](RiskIncident.md) | [hasImpact](hasImpact.md)     | range | [Impact](Impact.md) |
 
 ## Identifier and Mapping Information
 
-
-
-
-
-
-
 ### Schema Source
 
-
-* from schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
-
-
-
+- from schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
 
 ## Mappings
 
 | Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | dpv:Impact |
-| native | nexus:Impact |
-
-
-
-
-
-
+| ------------ | ------------ |
+| self         | dpv:Impact   |
+| native       | nexus:Impact |
 
 ## LinkML Source
 
@@ -128,7 +176,7 @@ mixins:
 - RiskConcept
 class_uri: dpv:Impact
 
-```
+````
 </details>
 
 ### Induced
@@ -228,7 +276,162 @@ attributes:
     - Entity
     range: date
     required: false
+  exact_mappings:
+    name: exact_mappings
+    description: The property is used to link two concepts, indicating a high degree
+      of confidence that the concepts can be used interchangeably across a wide range
+      of information retrieval applications
+    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    rank: 1000
+    slot_uri: skos:exactMatch
+    alias: exact_mappings
+    owner: Impact
+    domain_of:
+    - Entity
+    range: Any
+    multivalued: true
+    inlined: false
+  close_mappings:
+    name: close_mappings
+    description: The property is used to link two concepts that are sufficiently similar
+      that they can be used interchangeably in some information retrieval applications.
+    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    rank: 1000
+    slot_uri: skos:closeMatch
+    alias: close_mappings
+    owner: Impact
+    domain_of:
+    - Entity
+    range: Any
+    multivalued: true
+    inlined: false
+  related_mappings:
+    name: related_mappings
+    description: The property skos:relatedMatch is used to state an associative mapping
+      link between two concepts.
+    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    rank: 1000
+    slot_uri: skos:relatedMatch
+    alias: related_mappings
+    owner: Impact
+    domain_of:
+    - Entity
+    range: Any
+    multivalued: true
+    inlined: false
+  narrow_mappings:
+    name: narrow_mappings
+    description: The property is used to state a hierarchical mapping link between
+      two concepts, indicating that the concept linked to, is a narrower concept than
+      the originating concept.
+    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    rank: 1000
+    slot_uri: skos:narrowMatch
+    alias: narrow_mappings
+    owner: Impact
+    domain_of:
+    - Entity
+    range: Any
+    multivalued: true
+    inlined: false
+  broad_mappings:
+    name: broad_mappings
+    description: The property is used to state a hierarchical mapping link between
+      two concepts, indicating that the concept linked to, is a broader concept than
+      the originating concept.
+    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    rank: 1000
+    slot_uri: skos:broadMatch
+    alias: broad_mappings
+    owner: Impact
+    domain_of:
+    - Entity
+    range: Any
+    multivalued: true
+    inlined: false
+  isDefinedByTaxonomy:
+    name: isDefinedByTaxonomy
+    description: A relationship where a concept or a concept group is defined by a
+      taxonomy
+    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    rank: 1000
+    slot_uri: schema:isPartOf
+    alias: isDefinedByTaxonomy
+    owner: Impact
+    domain_of:
+    - Concept
+    - Control
+    - Group
+    - Entry
+    - Policy
+    - Rule
+    - RiskGroup
+    - Risk
+    - RiskControl
+    - Action
+    - RiskIncident
+    - CapabilityGroup
+    - StakeholderGroup
+    - Stakeholder
+    - Requirement
+    range: Taxonomy
+  hasDocumentation:
+    name: hasDocumentation
+    description: Indicates documentation associated with an entity.
+    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    rank: 1000
+    slot_uri: airo:hasDocumentation
+    alias: hasDocumentation
+    owner: Impact
+    domain_of:
+    - Dataset
+    - Vocabulary
+    - Taxonomy
+    - Concept
+    - Group
+    - Entry
+    - Term
+    - Principle
+    - RiskTaxonomy
+    - Action
+    - BaseAi
+    - LargeLanguageModelFamily
+    - AiEval
+    - BenchmarkMetadataCard
+    - Adapter
+    - LLMIntrinsic
+    range: Documentation
+    multivalued: true
+    inlined: false
+  type:
+    name: type
+    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/common
+    designates_type: true
+    alias: type
+    owner: Impact
+    domain_of:
+    - Vocabulary
+    - Taxonomy
+    - Concept
+    - Control
+    - Group
+    - Entry
+    - Policy
+    - Rule
+    - Permission
+    - Prohibition
+    - Obligation
+    - Recommendation
+    - Certification
+    - ControlActivity
+    - ControlActivityPermission
+    - ControlActivityProhibition
+    - ControlActivityObligation
+    - ControlActivityRecommendation
+    - Requirement
+    range: string
 class_uri: dpv:Impact
 
-```
+````
+
 </details>
